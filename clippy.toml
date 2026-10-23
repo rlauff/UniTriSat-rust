@@ -1,0 +1,10 @@
+# Production code returns typed errors instead of asserting. Test code is
+# exempted at each crate root with cfg_attr(test, ...).
+disallowed-macros = [
+    { path = "core::assert", reason = "return a typed error from production validation" },
+    { path = "core::assert_eq", reason = "return a typed error from production validation" },
+    { path = "core::assert_ne", reason = "return a typed error from production validation" },
+    { path = "core::debug_assert", reason = "no reachable panic sites in production" },
+    { path = "core::debug_assert_eq", reason = "no reachable panic sites in production" },
+    { path = "core::debug_assert_ne", reason = "no reachable panic sites in production" },
+]

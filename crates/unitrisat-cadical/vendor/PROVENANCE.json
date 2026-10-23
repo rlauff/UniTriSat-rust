@@ -1,0 +1,1383 @@
+{
+ "schema": "unitrisat lean CaDiCaL provenance v2",
+ "upstream": {
+  "project": "CaDiCaL",
+  "release": "2.2.1",
+  "commit": "4198d817d0dcde5b1240eefbff70b555b7df2af9",
+  "archive": "Opus/responses/task-0032/submission/cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9.tar.gz",
+  "archive_sha256": "a6f173de529a6b13a10aeae225304bea198641e5256b16f696dbe98c59d3d56d",
+  "extraction_record": "rust/target/native-source-acquired-20261014/EXTRACTION.json",
+  "extraction_record_sha256": "d74d42658015986d614ae16c794b4ed271e28bf96446b2eafce60cecf8935ee1"
+ },
+ "approval": {
+  "path": "docs/rust-migration/blocks/B17-cadical/contract-20261014/LEAD_API_APPROVAL.json",
+  "sha256": "7c6466a8c0777cc8322cd1e0717e167c891f9183f4fa102729c1ada39a595155"
+ },
+ "reviewed_inputs": {
+  "CONTRACT_DRAFT.md": "a2cdc9a6af58a37813072538977d224fbb7e5fe09db41f06f9e2d7e57cee3e03",
+  "BUILD_AND_BLOCKERS_DRAFT.md": "21ccb4e4a264e1f0a0c554221963451cbfbb55c780759fbb51f03bcd6380dfa3",
+  "BUILD_INPUTS_DRAFT.json": "1459947c0339b6e384d5c638d46119a64c92cf6a7f7ced9c0dfa91cc8381497c",
+  "SOURCE_DELTA.json": "30b914fc4d532af96b1580809e85e1763a3d35bf23ebfbc5f6cdb15c1f94ead0",
+  "cadical-unitrisat-boundary.patch": "4588ff1adbc5a7e66239a1001deb41d0c21a21b6e1c36f06dae8ce7356420be0",
+  "STATIC_PATCH_CHECK.json": "03a374e8d2f8d1daf8635f0c8e868667dc1f7c97581477b04f76d65057eaa1b2"
+ },
+ "patch": {
+  "path": "vendor/patches/cadical-unitrisat-boundary.patch",
+  "sha256": "4588ff1adbc5a7e66239a1001deb41d0c21a21b6e1c36f06dae8ce7356420be0",
+  "application": "GNU patch -p1 --fuzz=0 --no-backup-if-mismatch --batch -d vendor/cadical; exit 0; all 10 hunks applied at their stated lines (no offset/fuzz messages); no .orig/.rej",
+  "files": {
+   "src/internal.cpp": {
+    "original_sha256": "2d12a8bad62535cd8fc1c9ba3e440a61db8fe67f8396363690e44d3052362404",
+    "original_copy_sha256": "2d12a8bad62535cd8fc1c9ba3e440a61db8fe67f8396363690e44d3052362404",
+    "patched_sha256": "1cfdfd438335f95854fa1933d2c12d3f09ecb81e86d219c2e208ce56a14afa9e",
+    "expected_patched_sha256": "1cfdfd438335f95854fa1933d2c12d3f09ecb81e86d219c2e208ce56a14afa9e",
+    "match": true
+   },
+   "src/compact.cpp": {
+    "original_sha256": "367a307660740c49edce695bab29b6ba00a1b3628f9fc618223e9d96fbb3f77f",
+    "original_copy_sha256": "367a307660740c49edce695bab29b6ba00a1b3628f9fc618223e9d96fbb3f77f",
+    "patched_sha256": "068d639c956c11524afc3ca701e30303d91bf5609fcdd62f6a316d47c0abc246",
+    "expected_patched_sha256": "068d639c956c11524afc3ca701e30303d91bf5609fcdd62f6a316d47c0abc246",
+    "match": true
+   },
+   "src/options.cpp": {
+    "original_sha256": "cedba3073aa6fe83bbf3044fb86a6f042fc329cdbe48afc76c14042994b0d591",
+    "original_copy_sha256": "cedba3073aa6fe83bbf3044fb86a6f042fc329cdbe48afc76c14042994b0d591",
+    "patched_sha256": "c781a287e45cc1960be3ee01446d8b70bf01492ba9666fae6df93269771a577f",
+    "expected_patched_sha256": "c781a287e45cc1960be3ee01446d8b70bf01492ba9666fae6df93269771a577f",
+    "match": true
+   },
+   "src/solver.cpp": {
+    "original_sha256": "5c69320029787b6f8eaf9c02fb788a8eca13d0ad73f6a709ce8ac3ae4798fa2f",
+    "original_copy_sha256": "5c69320029787b6f8eaf9c02fb788a8eca13d0ad73f6a709ce8ac3ae4798fa2f",
+    "patched_sha256": "9dee92b96a31937f5e123f7ff8de27cebe598495972d81f50fa8270f4858f212",
+    "expected_patched_sha256": "9dee92b96a31937f5e123f7ff8de27cebe598495972d81f50fa8270f4858f212",
+    "match": true
+   }
+  }
+ },
+ "counts": {
+  "vendored_files": 159,
+  "cpp_translation_units": 89,
+  "c_translation_units": 1,
+  "headers": 66,
+  "byte_exact_upstream": 154,
+  "patched": 5,
+  "omitted_historical_files": 2
+ },
+ "files": [
+  {
+   "path": "vendor/cadical/LICENSE",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/LICENSE",
+   "upstream_sha256": "e6e43717e3412b8b8dde30581ff5ee4605ee7ade3d30972bb0d2124e67cb922c",
+   "vendor_sha256": "e6e43717e3412b8b8dde30581ff5ee4605ee7ade3d30972bb0d2124e67cb922c",
+   "role": "license",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/README.md",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/README.md",
+   "upstream_sha256": "1ff3d39f6f313c08104a76356423abda615c0a1c062ddeb7f7460d03ec1f0d95",
+   "vendor_sha256": "1ff3d39f6f313c08104a76356423abda615c0a1c062ddeb7f7460d03ec1f0d95",
+   "role": "readme",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/VERSION",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/VERSION",
+   "upstream_sha256": "fe650098093fad42070e8a2cacfb216a6c416af57bd26dd6ff479fef69f8bc71",
+   "vendor_sha256": "fe650098093fad42070e8a2cacfb216a6c416af57bd26dd6ff479fef69f8bc71",
+   "role": "version",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/analyze.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/analyze.cpp",
+   "upstream_sha256": "82f8a61b82a49c800ca38f7c6e257b2e40c426632aaafb5b63138dc2bd2e5f45",
+   "vendor_sha256": "82f8a61b82a49c800ca38f7c6e257b2e40c426632aaafb5b63138dc2bd2e5f45",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/arena.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/arena.cpp",
+   "upstream_sha256": "6e93b3571159665014b2fb3d2780049f7efabe317f1e58366eed40fb34e27464",
+   "vendor_sha256": "6e93b3571159665014b2fb3d2780049f7efabe317f1e58366eed40fb34e27464",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/arena.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/arena.hpp",
+   "upstream_sha256": "6ad14391ba91be156ea73f7a230e874c933b276fc52d7a277426b45cab5bd296",
+   "vendor_sha256": "6ad14391ba91be156ea73f7a230e874c933b276fc52d7a277426b45cab5bd296",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/assume.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/assume.cpp",
+   "upstream_sha256": "4e5906016e7c8fa29f14f5f81f0919ebe1e55d19743b2688662322e61ab3a4f7",
+   "vendor_sha256": "4e5906016e7c8fa29f14f5f81f0919ebe1e55d19743b2688662322e61ab3a4f7",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/averages.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/averages.cpp",
+   "upstream_sha256": "1fa8ff51cce1545eaad37f9b629fcab720f0d267c69c0326fc27e0d7470a9cb7",
+   "vendor_sha256": "1fa8ff51cce1545eaad37f9b629fcab720f0d267c69c0326fc27e0d7470a9cb7",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/averages.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/averages.hpp",
+   "upstream_sha256": "514420bd248e32dc617f3f0bd533163bc1b60c0e7aca6793901aa5fc44054f54",
+   "vendor_sha256": "514420bd248e32dc617f3f0bd533163bc1b60c0e7aca6793901aa5fc44054f54",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/backbone.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/backbone.cpp",
+   "upstream_sha256": "c2a656d9a9c2f6a8d1202886f411b821269ace98144aa6f4d0b49f09842631a8",
+   "vendor_sha256": "c2a656d9a9c2f6a8d1202886f411b821269ace98144aa6f4d0b49f09842631a8",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/backtrack.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/backtrack.cpp",
+   "upstream_sha256": "31b18e2bdfd59db327ced4552569a4f10463392bb4adb9de82d6efb63278361c",
+   "vendor_sha256": "31b18e2bdfd59db327ced4552569a4f10463392bb4adb9de82d6efb63278361c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/backward.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/backward.cpp",
+   "upstream_sha256": "f5ee31a766e68b7c16ecb294592a1115eaff0cf5f47d8f66524e044bd4c820b8",
+   "vendor_sha256": "f5ee31a766e68b7c16ecb294592a1115eaff0cf5f47d8f66524e044bd4c820b8",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/bins.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/bins.cpp",
+   "upstream_sha256": "f66843a2d7512ec378f4669d418d1c2ac952ec30aad428fa29cb789f1f126114",
+   "vendor_sha256": "f66843a2d7512ec378f4669d418d1c2ac952ec30aad428fa29cb789f1f126114",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/bins.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/bins.hpp",
+   "upstream_sha256": "8a30118553de18784ff7e7837a1fa274969649f0a0f27db63f8bf35d61633275",
+   "vendor_sha256": "8a30118553de18784ff7e7837a1fa274969649f0a0f27db63f8bf35d61633275",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/block.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/block.cpp",
+   "upstream_sha256": "4145e673c92a357a953b5c685097ac8308023b8694b4ab2c2d4d2a4215760d05",
+   "vendor_sha256": "4145e673c92a357a953b5c685097ac8308023b8694b4ab2c2d4d2a4215760d05",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/block.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/block.hpp",
+   "upstream_sha256": "c1fa174753124d7e514dab450279f54a6e3d01b7b4544c73d63309c2850a2f00",
+   "vendor_sha256": "c1fa174753124d7e514dab450279f54a6e3d01b7b4544c73d63309c2850a2f00",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/cadical.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/cadical.hpp",
+   "upstream_sha256": "2f148d22177add0e196ba8ce60b3d2e7dee4ae856c6c113ebe2c86ca6bbbf106",
+   "vendor_sha256": "2f148d22177add0e196ba8ce60b3d2e7dee4ae856c6c113ebe2c86ca6bbbf106",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/ccadical.h",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/ccadical.h",
+   "upstream_sha256": "395c4b5eee41aa8367452c2b4e9aae028d865494ef5d922308d9be58b646e1ab",
+   "vendor_sha256": "395c4b5eee41aa8367452c2b4e9aae028d865494ef5d922308d9be58b646e1ab",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/checker.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/checker.cpp",
+   "upstream_sha256": "4f044ab6e9513427cd8b1dbf4ae35cfeaf2059c015f6e341f44aa220da08720e",
+   "vendor_sha256": "4f044ab6e9513427cd8b1dbf4ae35cfeaf2059c015f6e341f44aa220da08720e",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/checker.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/checker.hpp",
+   "upstream_sha256": "37789db205a407e8c64408b938f26ff6542cf5b5518063e4d61ac8450cbc85e5",
+   "vendor_sha256": "37789db205a407e8c64408b938f26ff6542cf5b5518063e4d61ac8450cbc85e5",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/clause.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/clause.cpp",
+   "upstream_sha256": "9bdcff96d350af891c0ffadceda58e2eff27a872e5b4e2d5d37e974222b0968a",
+   "vendor_sha256": "9bdcff96d350af891c0ffadceda58e2eff27a872e5b4e2d5d37e974222b0968a",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/clause.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/clause.hpp",
+   "upstream_sha256": "e50a7ef4b1b2df9e7e5d792f53ed3f8b217e968e5b2b46f2c02bca806bd171cf",
+   "vendor_sha256": "e50a7ef4b1b2df9e7e5d792f53ed3f8b217e968e5b2b46f2c02bca806bd171cf",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/collect.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/collect.cpp",
+   "upstream_sha256": "1d5eb305130d75571dc04bc1a34f2636b60e1c7a88032987bcdb53a530342a3c",
+   "vendor_sha256": "1d5eb305130d75571dc04bc1a34f2636b60e1c7a88032987bcdb53a530342a3c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/compact.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/compact.cpp",
+   "upstream_sha256": "367a307660740c49edce695bab29b6ba00a1b3628f9fc618223e9d96fbb3f77f",
+   "vendor_sha256": "068d639c956c11524afc3ca701e30303d91bf5609fcdd62f6a316d47c0abc246",
+   "role": "cpp_translation_unit",
+   "state": "patched",
+   "original_copy": "vendor/cadical-original/src/compact.cpp"
+  },
+  {
+   "path": "vendor/cadical/src/condition.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/condition.cpp",
+   "upstream_sha256": "68da785a3cec95a941d8dc7fe7de5bfb13c6cd46e676d2da0627cf2b14eef363",
+   "vendor_sha256": "68da785a3cec95a941d8dc7fe7de5bfb13c6cd46e676d2da0627cf2b14eef363",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/config.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/config.cpp",
+   "upstream_sha256": "0816f59c3ce17039153b185d5fcfc76b8c7f0005fb79aacf2286c16f869eeea4",
+   "vendor_sha256": "0816f59c3ce17039153b185d5fcfc76b8c7f0005fb79aacf2286c16f869eeea4",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/config.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/config.hpp",
+   "upstream_sha256": "814e72d6152c23592e44f4fa2a4972478c581cd9360fef27827395c98a09d306",
+   "vendor_sha256": "814e72d6152c23592e44f4fa2a4972478c581cd9360fef27827395c98a09d306",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/congruence.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/congruence.cpp",
+   "upstream_sha256": "a654b5c9554fd90657a4f9d09f4e7083c40338f124102f6adb71b6b87597c88c",
+   "vendor_sha256": "a654b5c9554fd90657a4f9d09f4e7083c40338f124102f6adb71b6b87597c88c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/congruence.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/congruence.hpp",
+   "upstream_sha256": "ce1ba622524a1e0991137a6a812345350531cb0ed4df50ee94689f203ff706d7",
+   "vendor_sha256": "ce1ba622524a1e0991137a6a812345350531cb0ed4df50ee94689f203ff706d7",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/constrain.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/constrain.cpp",
+   "upstream_sha256": "6c4f0a74897141756a46d082ca361c136029d5b7bd1e021c41a6e346aa03fbb9",
+   "vendor_sha256": "6c4f0a74897141756a46d082ca361c136029d5b7bd1e021c41a6e346aa03fbb9",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/contract.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/contract.cpp",
+   "upstream_sha256": "d8db50d096292719ef8fe93b579b6eaa731212a3c13293214019d4869c89ef3d",
+   "vendor_sha256": "d8db50d096292719ef8fe93b579b6eaa731212a3c13293214019d4869c89ef3d",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/contract.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/contract.hpp",
+   "upstream_sha256": "27415f5cd9e8d066e24eaa0054ec25fc59695b3cd1225350e52386c53f7161dd",
+   "vendor_sha256": "27415f5cd9e8d066e24eaa0054ec25fc59695b3cd1225350e52386c53f7161dd",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/cover.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/cover.cpp",
+   "upstream_sha256": "6ce32c10ab70ed7d087aebee57870f73b7f50c62499bf8c1a80f7b3a5690a886",
+   "vendor_sha256": "6ce32c10ab70ed7d087aebee57870f73b7f50c62499bf8c1a80f7b3a5690a886",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/cover.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/cover.hpp",
+   "upstream_sha256": "f84bbbe5dc6e4fce470f84aaf4659e217e6a226b7e5d092e4afe86572a4526ae",
+   "vendor_sha256": "f84bbbe5dc6e4fce470f84aaf4659e217e6a226b7e5d092e4afe86572a4526ae",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/decide.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/decide.cpp",
+   "upstream_sha256": "a29aedcec6a2e3c1f6f6bfe244ed267aa037aeba046f8a077236b7640d954f39",
+   "vendor_sha256": "a29aedcec6a2e3c1f6f6bfe244ed267aa037aeba046f8a077236b7640d954f39",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/decompose.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/decompose.cpp",
+   "upstream_sha256": "86ad0613cca4ff14dd5702bfda7373848a3534b274b3ddac3ef620170e9bdc9b",
+   "vendor_sha256": "86ad0613cca4ff14dd5702bfda7373848a3534b274b3ddac3ef620170e9bdc9b",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/decompose.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/decompose.hpp",
+   "upstream_sha256": "d00cc378a9bf7d0b93f0cf432221a2fe5df0235f7661b6393cc2be8c2b0d1d3f",
+   "vendor_sha256": "d00cc378a9bf7d0b93f0cf432221a2fe5df0235f7661b6393cc2be8c2b0d1d3f",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/deduplicate.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/deduplicate.cpp",
+   "upstream_sha256": "a867ca647388c3ce33f1c51ed9e3273e7c0aee6457f3bd0f4ceb941b51610f02",
+   "vendor_sha256": "a867ca647388c3ce33f1c51ed9e3273e7c0aee6457f3bd0f4ceb941b51610f02",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/definition.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/definition.cpp",
+   "upstream_sha256": "a3bf641521b9bafee146bbbdb9533cc77381071256ad55b3f314f5ed6a632d69",
+   "vendor_sha256": "a3bf641521b9bafee146bbbdb9533cc77381071256ad55b3f314f5ed6a632d69",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/delay.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/delay.hpp",
+   "upstream_sha256": "4f956c35551978935935683eab7568f3ae0ece64f4094829da480de5852f1c8b",
+   "vendor_sha256": "4f956c35551978935935683eab7568f3ae0ece64f4094829da480de5852f1c8b",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/drattracer.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/drattracer.cpp",
+   "upstream_sha256": "7edb49de1cdc292b5e2f5f48aa8914a01de53b7517cee78acdac08fbb04312bc",
+   "vendor_sha256": "7edb49de1cdc292b5e2f5f48aa8914a01de53b7517cee78acdac08fbb04312bc",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/drattracer.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/drattracer.hpp",
+   "upstream_sha256": "bc80079ed7f0ff3bddc240e993261a5155c7ff7214a536eae6c0d57b12bb1873",
+   "vendor_sha256": "bc80079ed7f0ff3bddc240e993261a5155c7ff7214a536eae6c0d57b12bb1873",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/elim.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/elim.cpp",
+   "upstream_sha256": "d9a7178bf3d20b451b86fa54991d8655165c8e98cdc9c946e9cc55019937a726",
+   "vendor_sha256": "d9a7178bf3d20b451b86fa54991d8655165c8e98cdc9c946e9cc55019937a726",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/elim.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/elim.hpp",
+   "upstream_sha256": "6c53a04e2765b961e4b62ae2bd384d1fa726b75043f4bdf58f020416089acfe8",
+   "vendor_sha256": "6c53a04e2765b961e4b62ae2bd384d1fa726b75043f4bdf58f020416089acfe8",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/elimfast.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/elimfast.cpp",
+   "upstream_sha256": "2cd61b164fee7bf411678ccdb90b6f97e4db5c1615edd78038d6c78c9ce9a88c",
+   "vendor_sha256": "2cd61b164fee7bf411678ccdb90b6f97e4db5c1615edd78038d6c78c9ce9a88c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/ema.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/ema.cpp",
+   "upstream_sha256": "f12219a54b867670fb54457a7c55d0af1949427f291b4a5d5301ee99611169c5",
+   "vendor_sha256": "f12219a54b867670fb54457a7c55d0af1949427f291b4a5d5301ee99611169c5",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/ema.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/ema.hpp",
+   "upstream_sha256": "77eac1f47e1fd6b4d0578e0a64c60d49011e7b651f773faf209be9d32e0b30cd",
+   "vendor_sha256": "77eac1f47e1fd6b4d0578e0a64c60d49011e7b651f773faf209be9d32e0b30cd",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/extend.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/extend.cpp",
+   "upstream_sha256": "89a2b4238798f895a85f8bd6758d4a815ed48d28d4fe5d317c309466d42579e9",
+   "vendor_sha256": "89a2b4238798f895a85f8bd6758d4a815ed48d28d4fe5d317c309466d42579e9",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/external.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/external.cpp",
+   "upstream_sha256": "1e1cfe8b21d3879bcdf4c0e25d2e67808fb147d9f08b17d7ca30ab915b0e562c",
+   "vendor_sha256": "1e1cfe8b21d3879bcdf4c0e25d2e67808fb147d9f08b17d7ca30ab915b0e562c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/external.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/external.hpp",
+   "upstream_sha256": "e7d49a90f637015cdee0e3da596de1610b0e89755fafc4aacea6f8dbb69c4210",
+   "vendor_sha256": "e7d49a90f637015cdee0e3da596de1610b0e89755fafc4aacea6f8dbb69c4210",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/external_propagate.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/external_propagate.cpp",
+   "upstream_sha256": "413c223cecd318f51bf80ae798c57819c5dd12481d343d04ce89ea8c41f72ca8",
+   "vendor_sha256": "413c223cecd318f51bf80ae798c57819c5dd12481d343d04ce89ea8c41f72ca8",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/factor.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/factor.cpp",
+   "upstream_sha256": "c563556ba272f9f3da49e41295d8905d0311e4b1bf9368947effa898b6367967",
+   "vendor_sha256": "c563556ba272f9f3da49e41295d8905d0311e4b1bf9368947effa898b6367967",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/factor.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/factor.hpp",
+   "upstream_sha256": "f25698c6007c306eee3e1ddae1c40e0173a26717e0f39a201cef7484dfe4dae4",
+   "vendor_sha256": "f25698c6007c306eee3e1ddae1c40e0173a26717e0f39a201cef7484dfe4dae4",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/file.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/file.cpp",
+   "upstream_sha256": "9500b6ff245681c92704a8ce44167ea46f2c80a9a0621cda5cf6327d256e4058",
+   "vendor_sha256": "9500b6ff245681c92704a8ce44167ea46f2c80a9a0621cda5cf6327d256e4058",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/file.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/file.hpp",
+   "upstream_sha256": "643223d4cbcbc462e2aaf78ab7d6934babb4f74991806fa3912870d2ce721b4d",
+   "vendor_sha256": "643223d4cbcbc462e2aaf78ab7d6934babb4f74991806fa3912870d2ce721b4d",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/flags.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/flags.cpp",
+   "upstream_sha256": "02863b16f07b8f7a00b4fbb8c02ec48248769d654ad0a3ab43e29cfd751730ea",
+   "vendor_sha256": "02863b16f07b8f7a00b4fbb8c02ec48248769d654ad0a3ab43e29cfd751730ea",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/flags.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/flags.hpp",
+   "upstream_sha256": "f3051618f70695a0ab1e2d90738bb2902f678a4e3631dad23646ee5f16b8942b",
+   "vendor_sha256": "f3051618f70695a0ab1e2d90738bb2902f678a4e3631dad23646ee5f16b8942b",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/flip.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/flip.cpp",
+   "upstream_sha256": "5cdeb2115266cb41224e6f1c2c05cf2561e8c45cac3f289cbdf8f9deaf90a428",
+   "vendor_sha256": "5cdeb2115266cb41224e6f1c2c05cf2561e8c45cac3f289cbdf8f9deaf90a428",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/format.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/format.cpp",
+   "upstream_sha256": "8f4d4d77e8fb0519847cac73d632c57b4377f8ed1bc9aad747aaf7d3f45a344a",
+   "vendor_sha256": "8f4d4d77e8fb0519847cac73d632c57b4377f8ed1bc9aad747aaf7d3f45a344a",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/format.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/format.hpp",
+   "upstream_sha256": "0d7133e5700216e7b367c71bade72b125e2cdf4080afbd8924275be88c81f198",
+   "vendor_sha256": "0d7133e5700216e7b367c71bade72b125e2cdf4080afbd8924275be88c81f198",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/frattracer.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/frattracer.cpp",
+   "upstream_sha256": "987cf74c3f8383caac64c29bde2b91a7114bf64b455102d5074e2e4485bb996c",
+   "vendor_sha256": "987cf74c3f8383caac64c29bde2b91a7114bf64b455102d5074e2e4485bb996c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/frattracer.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/frattracer.hpp",
+   "upstream_sha256": "635ebb4fe805e82550c1c2de0f044953c5b67f892b65482e0c3154521862283c",
+   "vendor_sha256": "635ebb4fe805e82550c1c2de0f044953c5b67f892b65482e0c3154521862283c",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/gates.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/gates.cpp",
+   "upstream_sha256": "58261d5c544dab569b4c42b88bfa48e53a0ee3beca93876385f7af475e2fa2ec",
+   "vendor_sha256": "58261d5c544dab569b4c42b88bfa48e53a0ee3beca93876385f7af475e2fa2ec",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/heap.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/heap.hpp",
+   "upstream_sha256": "2249c16b08a478acbb8befea122d7bd4400f2a172fab86556271a10ef11ed9d0",
+   "vendor_sha256": "2249c16b08a478acbb8befea122d7bd4400f2a172fab86556271a10ef11ed9d0",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/idruptracer.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/idruptracer.cpp",
+   "upstream_sha256": "0e1fb16d56d3e5689eb9bc66a47e4067a31d4be3b85534b610ef2a9eb8fb9a84",
+   "vendor_sha256": "0e1fb16d56d3e5689eb9bc66a47e4067a31d4be3b85534b610ef2a9eb8fb9a84",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/idruptracer.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/idruptracer.hpp",
+   "upstream_sha256": "273f3907c3df323dfa38c4f7e4511f01558e58cdce366d696a3e292026f966e8",
+   "vendor_sha256": "273f3907c3df323dfa38c4f7e4511f01558e58cdce366d696a3e292026f966e8",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/instantiate.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/instantiate.cpp",
+   "upstream_sha256": "96cdabb74c08745d3a309f7889a56765da935b4d44ea1131f82d2f74cc9e3823",
+   "vendor_sha256": "96cdabb74c08745d3a309f7889a56765da935b4d44ea1131f82d2f74cc9e3823",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/instantiate.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/instantiate.hpp",
+   "upstream_sha256": "3b7ba42aa6c18242614c243e88d8f67eaca4ac214497e2e165a94bbab950bb6c",
+   "vendor_sha256": "3b7ba42aa6c18242614c243e88d8f67eaca4ac214497e2e165a94bbab950bb6c",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/internal.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/internal.cpp",
+   "upstream_sha256": "2d12a8bad62535cd8fc1c9ba3e440a61db8fe67f8396363690e44d3052362404",
+   "vendor_sha256": "1cfdfd438335f95854fa1933d2c12d3f09ecb81e86d219c2e208ce56a14afa9e",
+   "role": "cpp_translation_unit",
+   "state": "patched",
+   "original_copy": "vendor/cadical-original/src/internal.cpp"
+  },
+  {
+   "path": "vendor/cadical/src/internal.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/internal.hpp",
+   "upstream_sha256": "d0aa4f0e7b9ae2923ecf36a708a5f212028a64f844290a773a19f65b5f830ef9",
+   "vendor_sha256": "d0aa4f0e7b9ae2923ecf36a708a5f212028a64f844290a773a19f65b5f830ef9",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/inttypes.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/inttypes.hpp",
+   "upstream_sha256": "6a3da101d565ba42cffd7c1e4a683d3ce9dd71142b95c13aaba967cf646f10f8",
+   "vendor_sha256": "6a3da101d565ba42cffd7c1e4a683d3ce9dd71142b95c13aaba967cf646f10f8",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/ipasir.h",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/ipasir.h",
+   "upstream_sha256": "bb6a5c2f55a4e278ba75c67cee5af5b71c7136f7915ba83e2bb19bfd2977e059",
+   "vendor_sha256": "bb6a5c2f55a4e278ba75c67cee5af5b71c7136f7915ba83e2bb19bfd2977e059",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/kitten.c",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/kitten.c",
+   "upstream_sha256": "bc9b841dbc14d2bf321a7da677a245b83934af7c8fbbe811876966cb9c9e1be0",
+   "vendor_sha256": "bc9b841dbc14d2bf321a7da677a245b83934af7c8fbbe811876966cb9c9e1be0",
+   "role": "c_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/kitten.h",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/kitten.h",
+   "upstream_sha256": "e3f930fcac4620d2f4ab16c2c8535408588fcde9187261dc10d1d6e9c873bc48",
+   "vendor_sha256": "e3f930fcac4620d2f4ab16c2c8535408588fcde9187261dc10d1d6e9c873bc48",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/level.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/level.hpp",
+   "upstream_sha256": "e459f0093e50ac1a9b8e3d5bd7954533167e9f712584c300872df44fd4294c40",
+   "vendor_sha256": "e459f0093e50ac1a9b8e3d5bd7954533167e9f712584c300872df44fd4294c40",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lidruptracer.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lidruptracer.cpp",
+   "upstream_sha256": "1035a87420f9b2f5805f90cc478dad66109fc860230e5f3a904ce0cb9c708eb3",
+   "vendor_sha256": "1035a87420f9b2f5805f90cc478dad66109fc860230e5f3a904ce0cb9c708eb3",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lidruptracer.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lidruptracer.hpp",
+   "upstream_sha256": "6875f50a85e78d9112f0fd43d184fd8c7174b0a5187c03adf24cba354107809d",
+   "vendor_sha256": "6875f50a85e78d9112f0fd43d184fd8c7174b0a5187c03adf24cba354107809d",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/limit.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/limit.cpp",
+   "upstream_sha256": "22606eb3000117ebbe26fc0336357df70af8b470db5752a291e82832fd0b3639",
+   "vendor_sha256": "22606eb3000117ebbe26fc0336357df70af8b470db5752a291e82832fd0b3639",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/limit.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/limit.hpp",
+   "upstream_sha256": "cddc68d15ee5cb557bf708142d3855a74cf5857205e099ec1efcb63a5423aed8",
+   "vendor_sha256": "cddc68d15ee5cb557bf708142d3855a74cf5857205e099ec1efcb63a5423aed8",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/logging.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/logging.cpp",
+   "upstream_sha256": "528161877c172328cfb62100c37e6ea082c762e818a13c959b38b221f92bd21c",
+   "vendor_sha256": "528161877c172328cfb62100c37e6ea082c762e818a13c959b38b221f92bd21c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/logging.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/logging.hpp",
+   "upstream_sha256": "adad0a9acdedf8bdc37b10e9772292b9f7aa0feddcfd39e57b17e9a356048af5",
+   "vendor_sha256": "adad0a9acdedf8bdc37b10e9772292b9f7aa0feddcfd39e57b17e9a356048af5",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lookahead.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lookahead.cpp",
+   "upstream_sha256": "7c1c4eccb8f0201fbb350189226d81de99c8d56b28d73642597d69c86821cccf",
+   "vendor_sha256": "7c1c4eccb8f0201fbb350189226d81de99c8d56b28d73642597d69c86821cccf",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lratchecker.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lratchecker.cpp",
+   "upstream_sha256": "edf6a35c4e145f5feae4bfcae504dc9f61db23acc18a508bc7fdbf28d110ed5e",
+   "vendor_sha256": "edf6a35c4e145f5feae4bfcae504dc9f61db23acc18a508bc7fdbf28d110ed5e",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lratchecker.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lratchecker.hpp",
+   "upstream_sha256": "429e684db9a845f213bcec03baeb0946d423d1e8fb45f88f9c783f36d753919c",
+   "vendor_sha256": "429e684db9a845f213bcec03baeb0946d423d1e8fb45f88f9c783f36d753919c",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lrattracer.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lrattracer.cpp",
+   "upstream_sha256": "6b05cfe9597e6712f6d6933cbe09cf422e88e754164b346cf8563e1631805eb0",
+   "vendor_sha256": "6b05cfe9597e6712f6d6933cbe09cf422e88e754164b346cf8563e1631805eb0",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lrattracer.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lrattracer.hpp",
+   "upstream_sha256": "e7037e553db434631de7192f9a7e674a0d6bdaa16910f2610b9b67925b7b8bee",
+   "vendor_sha256": "e7037e553db434631de7192f9a7e674a0d6bdaa16910f2610b9b67925b7b8bee",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/lucky.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/lucky.cpp",
+   "upstream_sha256": "e476e03aac03683d223a162e7e3a85d19dc5e946d45c4b1d636943caa536ee7d",
+   "vendor_sha256": "e476e03aac03683d223a162e7e3a85d19dc5e946d45c4b1d636943caa536ee7d",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/message.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/message.cpp",
+   "upstream_sha256": "700254ec5d273945fa22f9ad8df5be4f55546bd531e80d1c78eb666727dcd827",
+   "vendor_sha256": "700254ec5d273945fa22f9ad8df5be4f55546bd531e80d1c78eb666727dcd827",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/message.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/message.hpp",
+   "upstream_sha256": "65e72ebea491452ba93c52dd3e67dc2f16fd1733490590db2a46fc28fc80064a",
+   "vendor_sha256": "65e72ebea491452ba93c52dd3e67dc2f16fd1733490590db2a46fc28fc80064a",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/minimize.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/minimize.cpp",
+   "upstream_sha256": "18b731b1278fc41d18bd0897c34ef48fea1e7460e95f7119a776f268b07d0d5e",
+   "vendor_sha256": "18b731b1278fc41d18bd0897c34ef48fea1e7460e95f7119a776f268b07d0d5e",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/occs.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/occs.cpp",
+   "upstream_sha256": "e0b7483db18c19d98ad12cc617322b606edd3181bab04c09417752c1dab662a9",
+   "vendor_sha256": "e0b7483db18c19d98ad12cc617322b606edd3181bab04c09417752c1dab662a9",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/occs.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/occs.hpp",
+   "upstream_sha256": "cc4dbb5f3b638d5704933dbed938390caa955cda1703218050f270a935c8c338",
+   "vendor_sha256": "cc4dbb5f3b638d5704933dbed938390caa955cda1703218050f270a935c8c338",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/options.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/options.cpp",
+   "upstream_sha256": "cedba3073aa6fe83bbf3044fb86a6f042fc329cdbe48afc76c14042994b0d591",
+   "vendor_sha256": "d235bcf731d8ea86a4c5795b662c313db04f480deec8ed765d0823ec07e21922",
+   "role": "cpp_translation_unit",
+   "state": "patched",
+   "original_copy": "vendor/cadical-original/src/options.cpp"
+  },
+  {
+   "path": "vendor/cadical/src/options.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/options.hpp",
+   "upstream_sha256": "86671609613d4e4cd8ceb74866f2dd5909d2b6dc556aaa1b64a75bd3e1f1e426",
+   "vendor_sha256": "bf6695bce0d26e25944ac1eeb7018e53c91ce6f624e9666956f0bc28c83b27fb",
+   "role": "header",
+   "state": "patched"
+  },
+  {
+   "path": "vendor/cadical/src/parse.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/parse.cpp",
+   "upstream_sha256": "fc94a433cedbb02e0eabb54fada05b2fb0a2117492c449df7357b28226de74e5",
+   "vendor_sha256": "fc94a433cedbb02e0eabb54fada05b2fb0a2117492c449df7357b28226de74e5",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/parse.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/parse.hpp",
+   "upstream_sha256": "6cdbfabc925ae24634841adc1bcc5a835f947f8a0e445d97c3a27891ce8397ec",
+   "vendor_sha256": "6cdbfabc925ae24634841adc1bcc5a835f947f8a0e445d97c3a27891ce8397ec",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/phases.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/phases.cpp",
+   "upstream_sha256": "032de6fff2b41788c0b977ce08875c1f5eb12a8299808e6940570b2b65400b9f",
+   "vendor_sha256": "032de6fff2b41788c0b977ce08875c1f5eb12a8299808e6940570b2b65400b9f",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/phases.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/phases.hpp",
+   "upstream_sha256": "79cc06507a60cb278267894df74a1ab4fa20f756cc23e4c497764e3995ec131d",
+   "vendor_sha256": "79cc06507a60cb278267894df74a1ab4fa20f756cc23e4c497764e3995ec131d",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/probe.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/probe.cpp",
+   "upstream_sha256": "06cd64f58d50d49d1b79dbbb0d3a99fbeff66f6213cfb39743b0e202699bbacf",
+   "vendor_sha256": "06cd64f58d50d49d1b79dbbb0d3a99fbeff66f6213cfb39743b0e202699bbacf",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/profile.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/profile.cpp",
+   "upstream_sha256": "664805c979a5cdc9437a4f2a892fc670711b7aeaacfcd230926bddd5da90779b",
+   "vendor_sha256": "664805c979a5cdc9437a4f2a892fc670711b7aeaacfcd230926bddd5da90779b",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/profile.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/profile.hpp",
+   "upstream_sha256": "fc78d4d2be17f40f475718c82c795c7dd0bee13fffa3afa18b502b0d40d83eab",
+   "vendor_sha256": "fc78d4d2be17f40f475718c82c795c7dd0bee13fffa3afa18b502b0d40d83eab",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/proof.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/proof.cpp",
+   "upstream_sha256": "0fa5d2e3a9ba4bf7dc58d0805e0a746627b792ff3c78ff2e69cc8fdbccbc296d",
+   "vendor_sha256": "0fa5d2e3a9ba4bf7dc58d0805e0a746627b792ff3c78ff2e69cc8fdbccbc296d",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/proof.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/proof.hpp",
+   "upstream_sha256": "1deb809586fc2a6357e6efedab8ac6559e760843e8cba5f68c2ad0b93e0e50a4",
+   "vendor_sha256": "1deb809586fc2a6357e6efedab8ac6559e760843e8cba5f68c2ad0b93e0e50a4",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/propagate.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/propagate.cpp",
+   "upstream_sha256": "cca03a2ed68b861de341c523a76f2eaa3a45cb1dc1f64e989e74bebc5d6379d2",
+   "vendor_sha256": "cca03a2ed68b861de341c523a76f2eaa3a45cb1dc1f64e989e74bebc5d6379d2",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/queue.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/queue.cpp",
+   "upstream_sha256": "78adfc6f816bbdf95ffd4295135009f8f9435817ad552d9d9fccfe0009b6f9b1",
+   "vendor_sha256": "78adfc6f816bbdf95ffd4295135009f8f9435817ad552d9d9fccfe0009b6f9b1",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/queue.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/queue.hpp",
+   "upstream_sha256": "3bde69fe14b3ee9bd7640772661b4d4f9953543ac412c6ad9e849b1366f5ec3e",
+   "vendor_sha256": "3bde69fe14b3ee9bd7640772661b4d4f9953543ac412c6ad9e849b1366f5ec3e",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/radix.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/radix.hpp",
+   "upstream_sha256": "f4d0e6d3abd326d90f45cc3b2c237f89667eceeda2320a707f17ad1792efefaa",
+   "vendor_sha256": "f4d0e6d3abd326d90f45cc3b2c237f89667eceeda2320a707f17ad1792efefaa",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/random.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/random.cpp",
+   "upstream_sha256": "55c593c47e31be633785b30dade8646b725441aacdbb8e9171fec970ff805a2b",
+   "vendor_sha256": "55c593c47e31be633785b30dade8646b725441aacdbb8e9171fec970ff805a2b",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/random.h",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/random.h",
+   "upstream_sha256": "2888ebbfee4e40512030613e5736b97a166a63e77e2844938da8ff35e99ba89f",
+   "vendor_sha256": "2888ebbfee4e40512030613e5736b97a166a63e77e2844938da8ff35e99ba89f",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/random.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/random.hpp",
+   "upstream_sha256": "aa5717b982f62363d80a325f01304e75fd2667b654e66ee140232af4b8b3389a",
+   "vendor_sha256": "aa5717b982f62363d80a325f01304e75fd2667b654e66ee140232af4b8b3389a",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/range.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/range.hpp",
+   "upstream_sha256": "bbaaf97073f23751c60ac6dfbeff31bd13482c194950e1d88541d4e96811e567",
+   "vendor_sha256": "bbaaf97073f23751c60ac6dfbeff31bd13482c194950e1d88541d4e96811e567",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/reap.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/reap.cpp",
+   "upstream_sha256": "f2238c761c373fb83d313e5aa7fc411dddcb81a92c9a9ed0e2b87dc172042aa3",
+   "vendor_sha256": "f2238c761c373fb83d313e5aa7fc411dddcb81a92c9a9ed0e2b87dc172042aa3",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/reap.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/reap.hpp",
+   "upstream_sha256": "8d9661ca0c0c03182c3819287e91978f0e73c1b81fbe1ab560cfc48f13d09431",
+   "vendor_sha256": "8d9661ca0c0c03182c3819287e91978f0e73c1b81fbe1ab560cfc48f13d09431",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/reduce.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/reduce.cpp",
+   "upstream_sha256": "92ed1f9a4cdd6552036eb6f11dfb634ba429fde2b4ab6efc3e8db345f27e2e8c",
+   "vendor_sha256": "92ed1f9a4cdd6552036eb6f11dfb634ba429fde2b4ab6efc3e8db345f27e2e8c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/reluctant.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/reluctant.hpp",
+   "upstream_sha256": "0f9f5fd51e7361afc4a20097d4e63bcc06176a5150f0a22b2b88ea0b51944086",
+   "vendor_sha256": "0f9f5fd51e7361afc4a20097d4e63bcc06176a5150f0a22b2b88ea0b51944086",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/rephase.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/rephase.cpp",
+   "upstream_sha256": "bccaec4097cd231ef6801e4837b86224b804fe11e96c6098b88a1cfd1d89ae74",
+   "vendor_sha256": "bccaec4097cd231ef6801e4837b86224b804fe11e96c6098b88a1cfd1d89ae74",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/report.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/report.cpp",
+   "upstream_sha256": "c373be04232d60f2456c7e4e10f52d8aa3175d855367fea70e6d6c2c9757b574",
+   "vendor_sha256": "c373be04232d60f2456c7e4e10f52d8aa3175d855367fea70e6d6c2c9757b574",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/resources.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/resources.cpp",
+   "upstream_sha256": "a829bb6d1b13d06fedd2694a45fc983844d8f4c518b8a1727c7e19ff92851c0c",
+   "vendor_sha256": "a829bb6d1b13d06fedd2694a45fc983844d8f4c518b8a1727c7e19ff92851c0c",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/resources.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/resources.hpp",
+   "upstream_sha256": "123b928ae57117ef786b27d0fdd9d020ac41f61e11a1adc0ac26b22f596a6ebb",
+   "vendor_sha256": "123b928ae57117ef786b27d0fdd9d020ac41f61e11a1adc0ac26b22f596a6ebb",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/restart.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/restart.cpp",
+   "upstream_sha256": "c59ac5864723867627191539ed92d0f477f1c3f36abfc7225dfd03faaef99d66",
+   "vendor_sha256": "c59ac5864723867627191539ed92d0f477f1c3f36abfc7225dfd03faaef99d66",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/restore.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/restore.cpp",
+   "upstream_sha256": "c074a6eb0d8c27e7edfa1f620e06b603595334368dcce6a83c45bfeb1f1b95cc",
+   "vendor_sha256": "c074a6eb0d8c27e7edfa1f620e06b603595334368dcce6a83c45bfeb1f1b95cc",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/score.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/score.cpp",
+   "upstream_sha256": "c28fb29a2088489fd910096b2f76bf639c6068820a122b2367367c4813695360",
+   "vendor_sha256": "c28fb29a2088489fd910096b2f76bf639c6068820a122b2367367c4813695360",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/score.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/score.hpp",
+   "upstream_sha256": "c31640faa0f4ad12de563907cccd7410d1cd45c0ba123ceae34c18f55e2cf166",
+   "vendor_sha256": "c31640faa0f4ad12de563907cccd7410d1cd45c0ba123ceae34c18f55e2cf166",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/shrink.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/shrink.cpp",
+   "upstream_sha256": "516391b56ed30b11ef4a0167a5657e1a8bbdf8948ff008eeb6f25ab5f7fdd734",
+   "vendor_sha256": "516391b56ed30b11ef4a0167a5657e1a8bbdf8948ff008eeb6f25ab5f7fdd734",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/signal.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/signal.cpp",
+   "upstream_sha256": "254c51b41b4286c733e7789552493df94c67950b36ac79ddf0e94c61e6051933",
+   "vendor_sha256": "254c51b41b4286c733e7789552493df94c67950b36ac79ddf0e94c61e6051933",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/signal.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/signal.hpp",
+   "upstream_sha256": "c7b11f7ec872aa07ce255156f36051441a88b23c3af1a8849fe2304e2c6bf247",
+   "vendor_sha256": "c7b11f7ec872aa07ce255156f36051441a88b23c3af1a8849fe2304e2c6bf247",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/solution.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/solution.cpp",
+   "upstream_sha256": "87646582304446df1c27913a837e7b7edefa686536410b0a468294056c85be59",
+   "vendor_sha256": "87646582304446df1c27913a837e7b7edefa686536410b0a468294056c85be59",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/solver.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/solver.cpp",
+   "upstream_sha256": "5c69320029787b6f8eaf9c02fb788a8eca13d0ad73f6a709ce8ac3ae4798fa2f",
+   "vendor_sha256": "9dee92b96a31937f5e123f7ff8de27cebe598495972d81f50fa8270f4858f212",
+   "role": "cpp_translation_unit",
+   "state": "patched",
+   "original_copy": "vendor/cadical-original/src/solver.cpp"
+  },
+  {
+   "path": "vendor/cadical/src/stable.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/stable.cpp",
+   "upstream_sha256": "07f1ff1aecd052c632a4da88dd363d4f25e270c7ccf50be50d442bd9f8815f0b",
+   "vendor_sha256": "07f1ff1aecd052c632a4da88dd363d4f25e270c7ccf50be50d442bd9f8815f0b",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/stack.h",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/stack.h",
+   "upstream_sha256": "ff76d3baa6bdb3fde2cabe4a10ef5249e3e9c0ad3b5de4d0b7ab64ae3a9dde56",
+   "vendor_sha256": "ff76d3baa6bdb3fde2cabe4a10ef5249e3e9c0ad3b5de4d0b7ab64ae3a9dde56",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/stats.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/stats.cpp",
+   "upstream_sha256": "daae5970a2fed225a01931ddb8185c389f0cad8260e4cb29eeffd16c604fe0da",
+   "vendor_sha256": "daae5970a2fed225a01931ddb8185c389f0cad8260e4cb29eeffd16c604fe0da",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/stats.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/stats.hpp",
+   "upstream_sha256": "f3d10abbd018f46a852e59ac501cb0b0c09d565b63b9c67487b9798e63949344",
+   "vendor_sha256": "f3d10abbd018f46a852e59ac501cb0b0c09d565b63b9c67487b9798e63949344",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/subsume.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/subsume.cpp",
+   "upstream_sha256": "31c1038e9aa69ccbd09c07ba0d8700b8455dc9bf77addf247980729cb45c9e42",
+   "vendor_sha256": "31c1038e9aa69ccbd09c07ba0d8700b8455dc9bf77addf247980729cb45c9e42",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/sweep.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/sweep.cpp",
+   "upstream_sha256": "41249c81dd5dabc060e99fcf8e7c36a476fbb2f6ef82a7fdbc4ad9d5c13ebdab",
+   "vendor_sha256": "41249c81dd5dabc060e99fcf8e7c36a476fbb2f6ef82a7fdbc4ad9d5c13ebdab",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/sweep.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/sweep.hpp",
+   "upstream_sha256": "7bc68f009a6c90d707634ecbf2bcd43eef0bc39ee3b23804db3b069a2194290f",
+   "vendor_sha256": "7bc68f009a6c90d707634ecbf2bcd43eef0bc39ee3b23804db3b069a2194290f",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/terminal.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/terminal.cpp",
+   "upstream_sha256": "6dc98c5f8db1fefb20aa0c0af476a158c3819dc11c5a745cfd1822bba6fb07c6",
+   "vendor_sha256": "6dc98c5f8db1fefb20aa0c0af476a158c3819dc11c5a745cfd1822bba6fb07c6",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/terminal.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/terminal.hpp",
+   "upstream_sha256": "fa36689495037a27b94274ee705d9c19f8e11e08657f3226e5a642c0fad60108",
+   "vendor_sha256": "fa36689495037a27b94274ee705d9c19f8e11e08657f3226e5a642c0fad60108",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/ternary.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/ternary.cpp",
+   "upstream_sha256": "d9784a65309d5f7a65a0eacc22faf40d191cad0580803cb997ebb8ec5f41f89b",
+   "vendor_sha256": "d9784a65309d5f7a65a0eacc22faf40d191cad0580803cb997ebb8ec5f41f89b",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/testing.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/testing.hpp",
+   "upstream_sha256": "9fa00f941e01ea66f4d4e3fc07666022388f80929eb1911f72c2778f1033989b",
+   "vendor_sha256": "9fa00f941e01ea66f4d4e3fc07666022388f80929eb1911f72c2778f1033989b",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/tier.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/tier.cpp",
+   "upstream_sha256": "d56558db6b3aa40324862315ef641ebe7ebd22c45f803f76612cfda99c0a3f7b",
+   "vendor_sha256": "d56558db6b3aa40324862315ef641ebe7ebd22c45f803f76612cfda99c0a3f7b",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/tracer.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/tracer.hpp",
+   "upstream_sha256": "44987f602fffe77b629724de316c5fb8c7b61814a08c4fae2498942e8cff165c",
+   "vendor_sha256": "44987f602fffe77b629724de316c5fb8c7b61814a08c4fae2498942e8cff165c",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/transred.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/transred.cpp",
+   "upstream_sha256": "57883ad32c52844a355748d956c6d334d683aa7e06a8908752d6cd4ddbe262df",
+   "vendor_sha256": "57883ad32c52844a355748d956c6d334d683aa7e06a8908752d6cd4ddbe262df",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/unstable.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/unstable.cpp",
+   "upstream_sha256": "22648759c4e8868ae88991743b20846372d3e96495fd246ee1b75f753062bef8",
+   "vendor_sha256": "22648759c4e8868ae88991743b20846372d3e96495fd246ee1b75f753062bef8",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/util.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/util.cpp",
+   "upstream_sha256": "3f44b7a2ad6c711cf238f615962f82e95249a1b28658f715bc02d70ee50c6993",
+   "vendor_sha256": "3f44b7a2ad6c711cf238f615962f82e95249a1b28658f715bc02d70ee50c6993",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/util.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/util.hpp",
+   "upstream_sha256": "059a690eb9c84f67518a4faabec162d86a83ed044914b39a23bc3972a93323a3",
+   "vendor_sha256": "059a690eb9c84f67518a4faabec162d86a83ed044914b39a23bc3972a93323a3",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/var.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/var.cpp",
+   "upstream_sha256": "7b8dfab72b41cc140380f0078cd648916ff995db4bfeed3cdbea675ee7626382",
+   "vendor_sha256": "7b8dfab72b41cc140380f0078cd648916ff995db4bfeed3cdbea675ee7626382",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/var.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/var.hpp",
+   "upstream_sha256": "608ae6f810b0a99242b88ecb8df35e7804cee0d539ccec81c2b38af42c02d4d3",
+   "vendor_sha256": "608ae6f810b0a99242b88ecb8df35e7804cee0d539ccec81c2b38af42c02d4d3",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/veripbtracer.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/veripbtracer.cpp",
+   "upstream_sha256": "26cad489777472567603a64dad80f3f97c062643e701a72c6dd76289b4f77341",
+   "vendor_sha256": "26cad489777472567603a64dad80f3f97c062643e701a72c6dd76289b4f77341",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/veripbtracer.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/veripbtracer.hpp",
+   "upstream_sha256": "1d4fe336c1dd0e596fa337d11653809e2dafca954fa459639153cb7056c5a28f",
+   "vendor_sha256": "1d4fe336c1dd0e596fa337d11653809e2dafca954fa459639153cb7056c5a28f",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/version.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/version.cpp",
+   "upstream_sha256": "0c3e7e429cf5ee0c39815589e3ca6d9a8a392800b98f93206682719f504b56e1",
+   "vendor_sha256": "0c3e7e429cf5ee0c39815589e3ca6d9a8a392800b98f93206682719f504b56e1",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/version.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/version.hpp",
+   "upstream_sha256": "f582daa9d4985a982af864921a5c31261608f66bc816ebf8534e37fd63b1859e",
+   "vendor_sha256": "f582daa9d4985a982af864921a5c31261608f66bc816ebf8534e37fd63b1859e",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/vivify.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/vivify.cpp",
+   "upstream_sha256": "9a55d3ae0a5a02066fd771ed90cdcdc4ccdff9f2736f66bad661c7c7e44430f3",
+   "vendor_sha256": "9a55d3ae0a5a02066fd771ed90cdcdc4ccdff9f2736f66bad661c7c7e44430f3",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/vivify.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/vivify.hpp",
+   "upstream_sha256": "de3e5254f21596a8495ef46bbfddc8cc18669e1f403eb294d5f9db7358fed886",
+   "vendor_sha256": "de3e5254f21596a8495ef46bbfddc8cc18669e1f403eb294d5f9db7358fed886",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/walk.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/walk.cpp",
+   "upstream_sha256": "48ee05a8177fc89921adf931a1b5fe23cd245593e7b8639b1febdc8dc3f4df2d",
+   "vendor_sha256": "48ee05a8177fc89921adf931a1b5fe23cd245593e7b8639b1febdc8dc3f4df2d",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/walk.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/walk.hpp",
+   "upstream_sha256": "2729de25834801a486e95dc9d7616020b27b15156a482795a3f4b5090f02fce7",
+   "vendor_sha256": "2729de25834801a486e95dc9d7616020b27b15156a482795a3f4b5090f02fce7",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/walk_full_occs.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/walk_full_occs.cpp",
+   "upstream_sha256": "da3c8849cedbb1b6aeff299355dbb6ea5bc06ae202f2b1ae1773dfea6c3c4a0b",
+   "vendor_sha256": "da3c8849cedbb1b6aeff299355dbb6ea5bc06ae202f2b1ae1773dfea6c3c4a0b",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/warmup.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/warmup.cpp",
+   "upstream_sha256": "6bed31e41e50ed7be91a4fcceb48a9b1fc052fadd6480c14d63aa0406adfa85f",
+   "vendor_sha256": "6bed31e41e50ed7be91a4fcceb48a9b1fc052fadd6480c14d63aa0406adfa85f",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/watch.cpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/watch.cpp",
+   "upstream_sha256": "7ec77c44072567aff7bcd1b5a8b4d3b60191d32d7684178a404b0df9b3e079d3",
+   "vendor_sha256": "7ec77c44072567aff7bcd1b5a8b4d3b60191d32d7684178a404b0df9b3e079d3",
+   "role": "cpp_translation_unit",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/src/watch.hpp",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/src/watch.hpp",
+   "upstream_sha256": "bcb8306d3f58144bd23df91dd7e3cb1bbf3da0582692f1b0fbbfd75ca83f5bc8",
+   "vendor_sha256": "bcb8306d3f58144bd23df91dd7e3cb1bbf3da0582692f1b0fbbfd75ca83f5bc8",
+   "role": "header",
+   "state": "byte_exact_upstream"
+  }
+ ],
+ "historical_records_notice": "The upstream, approval and reviewed_inputs paths identify read-only historical migration records, now under /home/robert/Code/UniTriSat-migration-archive-2026-10-14/. They are not files shipped in this crate. Original-copy hashes in patch refer to historical inputs. The patch object describes the first patch intermediate state; additional_patches apply in order; files describes the final shipped tree.",
+ "omitted_historical_files": [
+  {
+   "path": "vendor/cadical/configure",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/configure",
+   "upstream_sha256": "cc739cbdd19ed29ec7314aa81c412b925c1fe6a5c158d22f75b29190cbcc741a",
+   "vendor_sha256": "cc739cbdd19ed29ec7314aa81c412b925c1fe6a5c158d22f75b29190cbcc741a",
+   "role": "build_reference_not_executed",
+   "state": "byte_exact_upstream"
+  },
+  {
+   "path": "vendor/cadical/makefile.in",
+   "upstream_path": "cadical-4198d817d0dcde5b1240eefbff70b555b7df2af9/makefile.in",
+   "upstream_sha256": "3e40c540a2600d2859dee6c0ac175c28737c2d6715fded68e609f4814ef2f418",
+   "vendor_sha256": "3e40c540a2600d2859dee6c0ac175c28737c2d6715fded68e609f4814ef2f418",
+   "role": "build_reference_not_executed",
+   "state": "byte_exact_upstream"
+  }
+ ],
+ "additional_patches": [
+  {
+   "path": "vendor/patches/0002-immutable-options.patch",
+   "sha256": "4993d20f9061a77da5f0f7b825afe81b8ef0d7240e60fbbdbc5aaab811cae896",
+   "reason": "Remove racing constructor writes to Options::table. Immutable metadata is constant-initialized because reportdefault is constexpr 0; standalone frontends that change that value are intentionally absent from this library-only vendor tree. All option values, limits, order, and instance storage mapping are unchanged.",
+   "application": "Apply after cadical-unitrisat-boundary.patch with GNU patch -p1 --fuzz=0 --batch --no-backup-if-mismatch. Reverse both patches verifies every retained source against its upstream SHA-256; forward reapplication reproduces every retained source byte-for-byte, with no fuzz/offsets.",
+   "files": {
+    "src/options.cpp": {
+     "before_sha256": "c781a287e45cc1960be3ee01446d8b70bf01492ba9666fae6df93269771a577f",
+     "patched_sha256": "d235bcf731d8ea86a4c5795b662c313db04f480deec8ed765d0823ec07e21922"
+    },
+    "src/options.hpp": {
+     "before_sha256": "86671609613d4e4cd8ceb74866f2dd5909d2b6dc556aaa1b64a75bd3e1f1e426",
+     "patched_sha256": "bf6695bce0d26e25944ac1eeb7018e53c91ce6f624e9666956f0bc28c83b27fb"
+    }
+   }
+  }
+ ]
+}

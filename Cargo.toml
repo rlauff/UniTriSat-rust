@@ -1,0 +1,42 @@
+[workspace]
+members = ["crates/*"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "GPL-3.0-only"
+publish = false
+
+# Big numbers (D5): one GMP, built from bundled source by gmp-mpfr-sys, shared
+# by cddlib (C, via the DEP_GMP_* metadata) and rug (Rust). Cargo allows only
+# one package with `links = "gmp"` per build, so a second gmp-mpfr-sys version
+# cannot enter the graph. Default features are off: no MPFR/MPC is built and
+# each crate enables only the rug types it uses.
+[workspace.dependencies]
+gmp-mpfr-sys = { version = "=1.7.1", default-features = false }
+rug = { version = "=1.30.0", default-features = false }
+
+# Lints shared by every crate. Crate roots add the production-only clippy
+# denials (see crates/unitrisat/src/lib.rs) so that test code may assert.
+[workspace.lints.rust]
+warnings = "deny"
+missing_docs = "deny"
+unsafe_code = "deny"
+unreachable_pub = "deny"
+
+[workspace.lints.clippy]
+undocumented_unsafe_blocks = "deny"
+
+[profile.dev]
+overflow-checks = true
+
+[profile.release]
+overflow-checks = true
+
+[profile.test]
+overflow-checks = true
+
+[profile.bench]
+overflow-checks = true

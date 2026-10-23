@@ -1,0 +1,17 @@
+*.job
+jobs/
+logs/
+profile*
+outs/
+.vscode/
+Other/
+results/
+cluster_state/
+none
+
+# Generated Python caches
+__pycache__/
+*.py[cod]
+
+# Cargo build artifacts
+/target/

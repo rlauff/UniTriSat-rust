@@ -1,0 +1,92 @@
+diff -ru a/cddlib/generated/cdd_f.h b/cddlib/generated/cdd_f.h
+--- a/cddlib/generated/cdd_f.h
++++ b/cddlib/generated/cdd_f.h
+@@ -40,13 +40,13 @@
+ extern myfloat ddf_minusone;
+ 
+ extern time_t ddf_statStartTime; /* cddlib starting time */
+-extern long ddf_statBApivots;  /* basis finding pivots */
+-extern long ddf_statCCpivots;  /* criss-cross pivots */
+-extern long ddf_statDS1pivots; /* phase 1 pivots */
+-extern long ddf_statDS2pivots; /* phase 2 pivots */
+-extern long ddf_statACpivots;  /* anticycling (cc) pivots */
++extern _Thread_local long ddf_statBApivots;  /* basis finding pivots */
++extern _Thread_local long ddf_statCCpivots;  /* criss-cross pivots */
++extern _Thread_local long ddf_statDS1pivots; /* phase 1 pivots */
++extern _Thread_local long ddf_statDS2pivots; /* phase 2 pivots */
++extern _Thread_local long ddf_statACpivots;  /* anticycling (cc) pivots */
+ #ifdef ddf_GMPRATIONAL
+-extern long ddf_statBSpivots;  /* basis status checking pivots */
++extern _Thread_local long ddf_statBSpivots;  /* basis status checking pivots */
+ #endif
+ extern ddf_LPSolverType ddf_choiceLPSolverDefault;  /* Default LP solver Algorithm */
+ extern ddf_LPSolverType ddf_choiceRedcheckAlgorithm;  /* Redundancy Checking Algorithm */
+diff -ru a/cddlib/generated/cddlib_f.c b/cddlib/generated/cddlib_f.c
+--- a/cddlib/generated/cddlib_f.c
++++ b/cddlib/generated/cddlib_f.c
+@@ -50,13 +50,13 @@
+ myfloat ddf_minusone;
+ 
+ time_t ddf_statStartTime; /* cddlib starting time */
+-long ddf_statBApivots;  /* basis finding pivots */
+-long ddf_statCCpivots;  /* criss-cross pivots */
+-long ddf_statDS1pivots; /* phase 1 pivots */
+-long ddf_statDS2pivots; /* phase 2 pivots */
+-long ddf_statACpivots;  /* anticycling (cc) pivots */
++_Thread_local long ddf_statBApivots;  /* basis finding pivots */
++_Thread_local long ddf_statCCpivots;  /* criss-cross pivots */
++_Thread_local long ddf_statDS1pivots; /* phase 1 pivots */
++_Thread_local long ddf_statDS2pivots; /* phase 2 pivots */
++_Thread_local long ddf_statACpivots;  /* anticycling (cc) pivots */
+ #ifdef ddf_GMPRATIONAL
+-long ddf_statBSpivots;  /* basis status checking pivots */
++_Thread_local long ddf_statBSpivots;  /* basis status checking pivots */
+ #endif
+ ddf_LPSolverType ddf_choiceLPSolverDefault;  /* Default LP solver Algorithm */
+ ddf_LPSolverType ddf_choiceRedcheckAlgorithm;  /* Redundancy Checking Algorithm */
+diff -ru a/cddlib/lib-src/cdd.h b/cddlib/lib-src/cdd.h
+--- a/cddlib/lib-src/cdd.h
++++ b/cddlib/lib-src/cdd.h
+@@ -39,13 +39,13 @@
+ extern mytype dd_minusone;
+ 
+ extern time_t dd_statStartTime; /* cddlib starting time */
+-extern long dd_statBApivots;  /* basis finding pivots */
+-extern long dd_statCCpivots;  /* criss-cross pivots */
+-extern long dd_statDS1pivots; /* phase 1 pivots */
+-extern long dd_statDS2pivots; /* phase 2 pivots */
+-extern long dd_statACpivots;  /* anticycling (cc) pivots */
++extern _Thread_local long dd_statBApivots;  /* basis finding pivots */
++extern _Thread_local long dd_statCCpivots;  /* criss-cross pivots */
++extern _Thread_local long dd_statDS1pivots; /* phase 1 pivots */
++extern _Thread_local long dd_statDS2pivots; /* phase 2 pivots */
++extern _Thread_local long dd_statACpivots;  /* anticycling (cc) pivots */
+ #ifdef GMPRATIONAL
+-extern long dd_statBSpivots;  /* basis status checking pivots */
++extern _Thread_local long dd_statBSpivots;  /* basis status checking pivots */
+ #endif
+ extern dd_LPSolverType dd_choiceLPSolverDefault;  /* Default LP solver Algorithm */
+ extern dd_LPSolverType dd_choiceRedcheckAlgorithm;  /* Redundancy Checking Algorithm */
+diff -ru a/cddlib/lib-src/cddlib.c b/cddlib/lib-src/cddlib.c
+--- a/cddlib/lib-src/cddlib.c
++++ b/cddlib/lib-src/cddlib.c
+@@ -49,13 +49,13 @@
+ mytype dd_minusone;
+ 
+ time_t dd_statStartTime; /* cddlib starting time */
+-long dd_statBApivots;  /* basis finding pivots */
+-long dd_statCCpivots;  /* criss-cross pivots */
+-long dd_statDS1pivots; /* phase 1 pivots */
+-long dd_statDS2pivots; /* phase 2 pivots */
+-long dd_statACpivots;  /* anticycling (cc) pivots */
++_Thread_local long dd_statBApivots;  /* basis finding pivots */
++_Thread_local long dd_statCCpivots;  /* criss-cross pivots */
++_Thread_local long dd_statDS1pivots; /* phase 1 pivots */
++_Thread_local long dd_statDS2pivots; /* phase 2 pivots */
++_Thread_local long dd_statACpivots;  /* anticycling (cc) pivots */
+ #ifdef GMPRATIONAL
+-long dd_statBSpivots;  /* basis status checking pivots */
++_Thread_local long dd_statBSpivots;  /* basis status checking pivots */
+ #endif
+ dd_LPSolverType dd_choiceLPSolverDefault;  /* Default LP solver Algorithm */
+ dd_LPSolverType dd_choiceRedcheckAlgorithm;  /* Redundancy Checking Algorithm */

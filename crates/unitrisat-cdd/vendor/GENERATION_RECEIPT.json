@@ -1,0 +1,294 @@
+{
+ "deterministic": {
+  "all_9_outputs_byte_identical": true,
+  "output_sha256": {
+   "cdd_f.h": "5a4d863f5124bce45b3b7fe711e2d70ae6ed7b8b180a0fea6b8393677762264f",
+   "cddcore_f.c": "7e28e77681fc477fd42e4fc96b0853e95f3518dcbb2e73f89925e24ad838ec88",
+   "cddio_f.c": "fcc9bbd3d1c1de021522e9fc3be9a1afb30c2d59041c0f66f51408ad69d92529",
+   "cddlib_f.c": "1309048aa31eef7b105da7c075c58312d98dfc95fba847e30e6bed22f3c33fec",
+   "cddlp_f.c": "c06117435b00c303a4170dd99abe20df43fb8c44f9081fb1b9d181dc666c9c0f",
+   "cddmp_f.c": "c8e3ab4c846ebd837a175612eb2aebc96371246448c05cce2b52d4d6eb635534",
+   "cddmp_f.h": "d219e50f6604bb9d45d6e4d6674b8cab3a9e1c4ab5a54071ab5af18d6a94fa0c",
+   "cddproj_f.c": "641824d431d864d1b0468f78f018f24f93f5a18de8243ee459f21f597cf6deb8",
+   "cddtypes_f.h": "548ecd57a655bb244146d762832f65a390f580752ede6b8e3df2adedd7023879"
+  },
+  "stdout_receipts_identical": true
+ },
+ "generator": "submission/generate_float_sources.py",
+ "generator_sha256": "320b3d1840bffc9fb0d769524c1ca09f4caff9f60555b035439cf838e55fbeb2",
+ "inputs_match_extraction_manifest": true,
+ "interpreter": "python3 -I -B (stdlib only: hashlib, json, os, re, sys)",
+ "nonliteral_wildcard_matches": [],
+ "not_run": "no C compiler, preprocessor, Cargo, library call, test or produced executable; GNU sed/awk were not executed (fidelity is by construction plus review)",
+ "preamble": {
+  "note": "In a VPATH/out-of-tree upstream build $< may carry a directory prefix; only this first comment line would differ. Deliberate deterministic equivalent.",
+  "reproduced": "/* generated automatically from <name> */ with <name> = bare source file name (in-tree make expansion, e.g. cddcore.c)",
+  "upstream": "awk BEGIN{print \"/* generated automatically from $< */\"} where make expands $< to the prerequisite"
+ },
+ "run_1": {
+  "argv": [
+   "python3",
+   "-I",
+   "-B",
+   "submission/generate_float_sources.py",
+   "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src",
+   "submission/vendor/cddlib/generated"
+  ],
+  "cwd": "Opus/responses/task-0035 (input given as absolute path)",
+  "exit": 0,
+  "stdout_receipt": {
+   "inputs": {
+    "cdd.h": "2b041f131be8608fcd15b8c6d676482c1df156a733ef379a9b3516cc0562cb28",
+    "cddcore.c": "c7b521f69d78396a3efeb85242c3f8f6d89c9304e97e80210bb405ac374d7b29",
+    "cddio.c": "035ce9ed0c45bb9967767432b3efe74842628fde57562d0e306cfbe302a75cb0",
+    "cddlib.c": "893d6b653b2bef017fdb158d260a058123d6b22f19584a19ba42b3ce499d3e55",
+    "cddlp.c": "74efb77ca8aff1dffb265483e48ba45482fb5300503e54b52105f5c9c2de06e2",
+    "cddmp.c": "78dc6614eba8c46f61745227939be5f321c3eadc144674c4c80119860983acd5",
+    "cddmp.h": "31bb10537de5f6442412f250f93a620857f02cb0a79297e94a89aaf7b03571e5",
+    "cddproj.c": "8d7dece4e4078be0eb341bd73658a787bc1edf90eda9939fe2117c2086301fd3",
+    "cddtypes.h": "d9d7f8aac7ec1d39c6cb22a4a3e89680f1f491bc53074391d1532b43ffcf10a1"
+   },
+   "nonliteral_wildcard_matches": [],
+   "outputs": {
+    "cdd_f.h": "5a4d863f5124bce45b3b7fe711e2d70ae6ed7b8b180a0fea6b8393677762264f",
+    "cddcore_f.c": "7e28e77681fc477fd42e4fc96b0853e95f3518dcbb2e73f89925e24ad838ec88",
+    "cddio_f.c": "fcc9bbd3d1c1de021522e9fc3be9a1afb30c2d59041c0f66f51408ad69d92529",
+    "cddlib_f.c": "1309048aa31eef7b105da7c075c58312d98dfc95fba847e30e6bed22f3c33fec",
+    "cddlp_f.c": "c06117435b00c303a4170dd99abe20df43fb8c44f9081fb1b9d181dc666c9c0f",
+    "cddmp_f.c": "c8e3ab4c846ebd837a175612eb2aebc96371246448c05cce2b52d4d6eb635534",
+    "cddmp_f.h": "d219e50f6604bb9d45d6e4d6674b8cab3a9e1c4ab5a54071ab5af18d6a94fa0c",
+    "cddproj_f.c": "641824d431d864d1b0468f78f018f24f93f5a18de8243ee459f21f597cf6deb8",
+    "cddtypes_f.h": "548ecd57a655bb244146d762832f65a390f580752ede6b8e3df2adedd7023879"
+   },
+   "rule_match_counts": {
+    "cdd_f.h": [
+     629,
+     1,
+     59,
+     0,
+     1,
+     1,
+     4,
+     1,
+     2,
+     2,
+     2,
+     0,
+     0
+    ],
+    "cddcore_f.c": [
+     796,
+     0,
+     79,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "cddio_f.c": [
+     709,
+     0,
+     15,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     10,
+     1,
+     0
+    ],
+    "cddlib_f.c": [
+     169,
+     0,
+     9,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    "cddlp_f.c": [
+     1693,
+     1,
+     32,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     13,
+     0,
+     0
+    ],
+    "cddmp_f.c": [
+     82,
+     0,
+     28,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     0,
+     1
+    ],
+    "cddmp_f.h": [
+     84,
+     0,
+     32,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     0,
+     2,
+     3,
+     1
+    ],
+    "cddproj_f.c": [
+     67,
+     0,
+     2,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "cddtypes_f.h": [
+     263,
+     0,
+     7,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     3,
+     0,
+     0,
+     0
+    ]
+   },
+   "rules": [
+    [
+     "dd_",
+     "ddf_",
+     "g"
+    ],
+    [
+     "cddf_",
+     "cdd_",
+     "g"
+    ],
+    [
+     "mytype",
+     "myfloat",
+     "g"
+    ],
+    [
+     "#include \"cdd.h\"",
+     "#include \"cdd_f.h\"",
+     "first"
+    ],
+    [
+     "#include \"cddtypes.h\"",
+     "#include \"cddtypes_f.h\"",
+     "first"
+    ],
+    [
+     "#include \"cddmp.h\"",
+     "#include \"cddmp_f.h\"",
+     "first"
+    ],
+    [
+     "__CDD_H",
+     "__CDD_HF",
+     "first"
+    ],
+    [
+     "__CDD_HFF",
+     "__CDD_HF",
+     "first"
+    ],
+    [
+     "__CDDMP_H",
+     "_CDDMP_HF",
+     "first"
+    ],
+    [
+     "__CDDTYPES_H",
+     "_CDDTYPES_HF",
+     "first"
+    ],
+    [
+     "GMPRATIONAL",
+     "ddf_GMPRATIONAL",
+     "g"
+    ],
+    [
+     "ARITHMETIC",
+     "ddf_ARITHMETIC",
+     "g"
+    ],
+    [
+     "CDOUBLE",
+     "ddf_CDOUBLE",
+     "g"
+    ]
+   ]
+  }
+ },
+ "run_2": {
+  "argv": [
+   "python3",
+   "-I",
+   "-B",
+   "submission/generate_float_sources.py",
+   "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src",
+   "regen-check-tmp/generated"
+  ],
+  "exit": 0,
+  "output_dir": "Opus/responses/task-0035/regen-check-tmp (response-local temporary; removed after comparison)",
+  "stdout_sha256": "a935b385f388564c2e687a26b2a07bf6ac7926cf59bc55f82729100bd3d41d70"
+ },
+ "schema": "task-0035 generation receipt v1",
+ "upstream_recipe": {
+  "lines": "29-44",
+  "path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/Makefile.gmp.am",
+  "sha256": "2eac45099583e38267e7ca04b5b9c72867a30ccd64b171500e2213e5c130b373"
+ },
+ "current_vendor_patch_chain": {
+  "record_scope": "Historical pristine inputs and generated outputs, before the lean thread-local counter patch. These original hashes are retained as patch inputs, not assertions about the current patched files.",
+  "path": "PATCHES.json",
+  "sha256": "9dbec1661bfb96d76205ced76ebd43506e76328d1eae3c2a42851fac438cb867",
+  "current_hashes": "SHA256SUMS records the current shipped files; PATCHES.json records original and patched hashes for the changed sources."
+ }
+}

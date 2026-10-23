@@ -1,0 +1,33 @@
+c263b86e5faabdaabe2b90c90c133103d2746e01b8d6d5288c5f775feb12427b  cube3/face_clauses.tsv  outs/lean-baseline/t1/w-dense-cube3-solve/cube3-r1-unimodular/face_clauses.tsv
+43d33d1ceb310fdfd2ad8b180e7f2e86d10ef0534b898cf61f34678d959b7379  cube3/meta.tsv  outs/lean-baseline/t1/w-dense-cube3-solve/cube3-r1-unimodular/meta.tsv
+aa7393e6731cdb6457a9d42bd1b2c276c73fc99d630f7f0784bd93ec867f4f56  cube3/pairs.tsv  outs/lean-baseline/t1/w-dense-cube3-solve/cube3-r1-unimodular/pairs.tsv
+fb176e3e0306b639fd4451dae045931ac5d9642879e63f9d6e2dba7e350be2b9  cube3/points.tsv  outs/lean-baseline/t1/w-dense-cube3-solve/cube3-r1-unimodular/points.tsv
+93e6868870576a127e17576bb329819aad0f6ed5f700bb6a789932522ebbd2b8  cube3/simplices.tsv  outs/lean-baseline/t1/w-dense-cube3-solve/cube3-r1-unimodular/simplices.tsv
+febdb137e590c7e84ff53fa2ec614c049bad3c881c6c1dec59be2100d431b502  cube3/vertices.tsv  outs/lean-baseline/t1/w-dense-cube3-solve/cube3-r1-unimodular/vertices.tsv
+07d38af1e723830f8b5f193e1f0d24e63f726bc19a947c48ca36f091ac182e09  cube3/flag_reference.tsv  derived from outs/lean-p53-fresh/julia-t1/w-dense-cube3-solve.tsv
+9c19ebb06698c6bfd7a0b64054385a64f53d872e6828bf96940fe4973fe2b76c  2simplex3/face_clauses.tsv  outs/lean-baseline/t1/w-dense-2simplex3-solve/2simplex3-r1-unimodular/face_clauses.tsv
+af61a37498e8dd3e507f8171cbb12ff706c54401c2defa44b9b9a168a4d8bcc8  2simplex3/meta.tsv  outs/lean-baseline/t1/w-dense-2simplex3-solve/2simplex3-r1-unimodular/meta.tsv
+c9d39e7ced0e69481d06639d4c3638a2b9c78442638fbc05971769abee8417b6  2simplex3/pairs.tsv  outs/lean-baseline/t1/w-dense-2simplex3-solve/2simplex3-r1-unimodular/pairs.tsv
+3920db5c2be5235b9da994c1d1711b58a112fd9474f27f95bacea0b9617938a6  2simplex3/points.tsv  outs/lean-baseline/t1/w-dense-2simplex3-solve/2simplex3-r1-unimodular/points.tsv
+1ad4c532d09b590356e95b9d33dd8affcc4a09323d34f90ab141915d1e47df78  2simplex3/simplices.tsv  outs/lean-baseline/t1/w-dense-2simplex3-solve/2simplex3-r1-unimodular/simplices.tsv
+a1db5c2e4a5362dad66e06315e7a00830b35d2c02b65386cdcdc00241feecf32  2simplex3/vertices.tsv  outs/lean-baseline/t1/w-dense-2simplex3-solve/2simplex3-r1-unimodular/vertices.tsv
+c87d3c0289da6cf1335cd7bf45fd8fa80fabc6393af102e496972f9d51c5b695  2simplex3/flag_reference.tsv  derived from outs/lean-p53-fresh/julia-t1/w-dense-2simplex3-solve.tsv
+af2905c50398b9840d15be9804234299d00b767ba213814b6fa7653bac0ef62c  data3/face_clauses.tsv  outs/lean-baseline/t1/w-small-3d-v8-solve/v8-r1-unimodular/face_clauses.tsv
+9b64d0c1254b047217a3219ca1aa5ce268cbb531c74e49df598e8eb233660317  data3/meta.tsv  outs/lean-baseline/t1/w-small-3d-v8-solve/v8-r1-unimodular/meta.tsv
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  data3/pairs.tsv  outs/lean-baseline/t1/w-small-3d-v8-solve/v8-r1-unimodular/pairs.tsv
+ec5919c309cd9c04bd64b49298054ae34ea422bb4f24c3a62f4bff14840303da  data3/points.tsv  outs/lean-baseline/t1/w-small-3d-v8-solve/v8-r1-unimodular/points.tsv
+23d24a472faa2f98ee7384d6352568f3c9cdecd3a6424458a55eae86febdfe82  data3/simplices.tsv  outs/lean-baseline/t1/w-small-3d-v8-solve/v8-r1-unimodular/simplices.tsv
+4414653431b5561fc71708ba8561fb719add29c74fc5b11c1f49c1dc98e3a90c  data3/vertices.tsv  outs/lean-baseline/t1/w-small-3d-v8-solve/v8-r1-unimodular/vertices.tsv
+d17becfa255f4cbd7411cb6f731d59e42d9076d5370eca8025cecd8c95b998b6  data3/flag_reference.tsv  derived from outs/lean-p53/julia-t1/w-small-3d-v8-solve.tsv
+154128e76bf21c452cfa94ced782ded41183b20fd39911820c890f5b4be61e29  data4/face_clauses.tsv  outs/lean-baseline/t1/w-mid-4d-v11-r5/v11-r5-unimodular/face_clauses.tsv
+35c978a6b566f60141308e63e575d8eb77b4808d3e1e26829578ae1b9c9daa86  data4/meta.tsv  outs/lean-baseline/t1/w-mid-4d-v11-r5/v11-r5-unimodular/meta.tsv
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  data4/pairs.tsv  outs/lean-baseline/t1/w-mid-4d-v11-r5/v11-r5-unimodular/pairs.tsv
+bcffd1972cf0ff7c1f9ff349cdb2285b668d109ffaaf117742a5b4c8bd783410  data4/points.tsv  outs/lean-baseline/t1/w-mid-4d-v11-r5/v11-r5-unimodular/points.tsv
+c08e9c314559ae5d527fdebaef9b661a9965798d79f815a8fb7c8706aaf50dbd  data4/simplices.tsv  outs/lean-baseline/t1/w-mid-4d-v11-r5/v11-r5-unimodular/simplices.tsv
+ea341796cfd44d8ff44f9b18a6998eba4a86850d77d3e68b12b19826515f4d24  data4/vertices.tsv  outs/lean-baseline/t1/w-mid-4d-v11-r5/v11-r5-unimodular/vertices.tsv
+4516c7711003139bf19772f84ee9ea2a80f314fc7544a373e77e1aad781743bc  data6/face_clauses.tsv  outs/lean-baseline/t1/w-high-6d-v11-r2/v11-r2-unimodular/face_clauses.tsv
+6d2fa1deba56187e55af1aa7fb2e2a4d22d72362fb212076173d18a958ecde3e  data6/meta.tsv  outs/lean-baseline/t1/w-high-6d-v11-r2/v11-r2-unimodular/meta.tsv
+510f0e2ec76fc6dde16f00a1f030b3a9da1467a8bc75013cfd34f861241b7619  data6/pairs.tsv  outs/lean-baseline/t1/w-high-6d-v11-r2/v11-r2-unimodular/pairs.tsv
+861ebde9148a08b929302b539596cd2082cc58d8789e938227e3db4b1d976a66  data6/points.tsv  outs/lean-baseline/t1/w-high-6d-v11-r2/v11-r2-unimodular/points.tsv
+ce44b4a84a14b65928895ddaa8f557b07fae324a512744cc69a003c52b584110  data6/simplices.tsv  outs/lean-baseline/t1/w-high-6d-v11-r2/v11-r2-unimodular/simplices.tsv
+daad7972dd7e532fa2a182335c0909bad601263e6c51852e63b65e5e07f975bf  data6/vertices.tsv  outs/lean-baseline/t1/w-high-6d-v11-r2/v11-r2-unimodular/vertices.tsv

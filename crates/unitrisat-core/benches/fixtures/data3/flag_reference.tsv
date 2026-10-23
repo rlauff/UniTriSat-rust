@@ -1,0 +1,2 @@
+source	outs/lean-p53/julia-t1/w-small-3d-v8-solve.tsv
+v8-r1-unimodular	picosat-serial	flag	all	0	0	1	0	1	0	ok	0.000524112	

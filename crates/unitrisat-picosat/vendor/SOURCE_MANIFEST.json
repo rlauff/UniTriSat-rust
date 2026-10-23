@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "engine": "PicoSAT 965",
+  "distribution": "pycosat 0.6.6",
+  "archive_sha256": "a376cfae20b16fcfbef24bf3c047a8a294c35032bb051fa98842c12bbab6f0ff",
+  "adaptation": "Project ten-line long-to-ptrdiff_t adaptation; not an acquired immutable upstream patch",
+  "configuration": "C; NGETRUSAGE; NDEBUG (internal assertions disabled; ABORTIF API checks remain active); no TRACE, RCODE, VISCORES, LOGGING, STATS; no version.c",
+  "files": [
+    {
+      "path": "picosat.c",
+      "sha256": "9ca55b68324aec51b8d65433aca059dadad9b2ac84122f5db6c32c8a587828ae",
+      "bytes": 174339
+    },
+    {
+      "path": "picosat.h",
+      "sha256": "42eb87b8770850341a35338a40eedeeb233c17fc35a6d72f44cd16ec9f0a5e21",
+      "bytes": 28779
+    },
+    {
+      "path": "picosat-ptrdiff.patch",
+      "sha256": "a62b3e8e3f7f10c0fea1967994e45145e708d3968e2cfc572b77b44ba0e4e556",
+      "bytes": 1735
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "233d9a3b1d9e0d8afb120ee76b98e65c55ede04162fe37c2e803a3d38968021e",
+      "bytes": 1084
+    },
+    {
+      "path": "PKG-INFO",
+      "sha256": "c3df68488a707ae6d6e0ec5c86eba6478b10910b74eb6a28a30fd5a2faf9cc7d",
+      "bytes": 5361
+    },
+    {
+      "path": "origin.json",
+      "sha256": "063da20646c17f19037eb4ba5579462b889b6a86755ef6b68f5e88ddbc543a37",
+      "bytes": 360
+    }
+  ]
+}

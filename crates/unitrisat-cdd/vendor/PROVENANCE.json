@@ -1,0 +1,268 @@
+{
+ "schema": "task-0035 provenance v1",
+ "cddlib": {
+  "commit": "86dfe60811ec879a46e73d488719acaa754536e4",
+  "version_label": "0.94n",
+  "archive_sha256": "1bdd3ded510146a43e9e4325da6d96cd2175c46ff054a1ec265850a96e98393b"
+ },
+ "gmp": {
+  "version": "6.3.0",
+  "archive_sha256": "ac28211a7cfb609bae2e2c8d6058d66c8fe96434f740cf6fe2e47b000d1c20cb"
+ },
+ "copied_byte_exact": [
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddcore.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddcore.c",
+   "origin_sha256": "c7b521f69d78396a3efeb85242c3f8f6d89c9304e97e80210bb405ac374d7b29",
+   "manifest_sha256": "c7b521f69d78396a3efeb85242c3f8f6d89c9304e97e80210bb405ac374d7b29",
+   "vendor_sha256": "c7b521f69d78396a3efeb85242c3f8f6d89c9304e97e80210bb405ac374d7b29",
+   "role": "CDD C unit (compiled with -DGMPRATIONAL)",
+   "license": "cddlib GPL (COPYING, GPLv2 text; file headers where present say v2 or later)"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddlp.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddlp.c",
+   "origin_sha256": "74efb77ca8aff1dffb265483e48ba45482fb5300503e54b52105f5c9c2de06e2",
+   "manifest_sha256": "74efb77ca8aff1dffb265483e48ba45482fb5300503e54b52105f5c9c2de06e2",
+   "vendor_sha256": "74efb77ca8aff1dffb265483e48ba45482fb5300503e54b52105f5c9c2de06e2",
+   "role": "CDD C unit (compiled with -DGMPRATIONAL)",
+   "license": "cddlib GPL (COPYING, GPLv2 text; file headers where present say v2 or later)"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddmp.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddmp.c",
+   "origin_sha256": "78dc6614eba8c46f61745227939be5f321c3eadc144674c4c80119860983acd5",
+   "manifest_sha256": "78dc6614eba8c46f61745227939be5f321c3eadc144674c4c80119860983acd5",
+   "vendor_sha256": "78dc6614eba8c46f61745227939be5f321c3eadc144674c4c80119860983acd5",
+   "role": "CDD C unit (compiled with -DGMPRATIONAL)",
+   "license": "cddlib GPL (COPYING, GPLv2 text; file headers where present say v2 or later)"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddio.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddio.c",
+   "origin_sha256": "035ce9ed0c45bb9967767432b3efe74842628fde57562d0e306cfbe302a75cb0",
+   "manifest_sha256": "035ce9ed0c45bb9967767432b3efe74842628fde57562d0e306cfbe302a75cb0",
+   "vendor_sha256": "035ce9ed0c45bb9967767432b3efe74842628fde57562d0e306cfbe302a75cb0",
+   "role": "CDD C unit (compiled with -DGMPRATIONAL)",
+   "license": "cddlib GPL (COPYING, GPLv2 text; file headers where present say v2 or later)"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddlib.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddlib.c",
+   "origin_sha256": "893d6b653b2bef017fdb158d260a058123d6b22f19584a19ba42b3ce499d3e55",
+   "manifest_sha256": "893d6b653b2bef017fdb158d260a058123d6b22f19584a19ba42b3ce499d3e55",
+   "vendor_sha256": "893d6b653b2bef017fdb158d260a058123d6b22f19584a19ba42b3ce499d3e55",
+   "role": "CDD C unit (compiled with -DGMPRATIONAL)",
+   "license": "cddlib GPL (COPYING, GPLv2 text; file headers where present say v2 or later)"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddproj.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddproj.c",
+   "origin_sha256": "8d7dece4e4078be0eb341bd73658a787bc1edf90eda9939fe2117c2086301fd3",
+   "manifest_sha256": "8d7dece4e4078be0eb341bd73658a787bc1edf90eda9939fe2117c2086301fd3",
+   "vendor_sha256": "8d7dece4e4078be0eb341bd73658a787bc1edf90eda9939fe2117c2086301fd3",
+   "role": "CDD C unit (compiled with -DGMPRATIONAL)",
+   "license": "cddlib GPL (COPYING, GPLv2 text; file headers where present say v2 or later)"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/setoper.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/setoper.c",
+   "origin_sha256": "e2cf749e61fb960db43d5523a5f2756a194cf2f5b8a338f3ab158c913bdecbac",
+   "manifest_sha256": "e2cf749e61fb960db43d5523a5f2756a194cf2f5b8a338f3ab158c913bdecbac",
+   "vendor_sha256": "e2cf749e61fb960db43d5523a5f2756a194cf2f5b8a338f3ab158c913bdecbac",
+   "role": "CDD C unit (compiled with -DGMPRATIONAL)",
+   "license": "cddlib GPL (COPYING, GPLv2 text; file headers where present say v2 or later)"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cdd.h",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cdd.h",
+   "origin_sha256": "2b041f131be8608fcd15b8c6d676482c1df156a733ef379a9b3516cc0562cb28",
+   "manifest_sha256": "2b041f131be8608fcd15b8c6d676482c1df156a733ef379a9b3516cc0562cb28",
+   "vendor_sha256": "2b041f131be8608fcd15b8c6d676482c1df156a733ef379a9b3516cc0562cb28",
+   "role": "CDD header",
+   "license": "cddlib GPL"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddmp.h",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddmp.h",
+   "origin_sha256": "31bb10537de5f6442412f250f93a620857f02cb0a79297e94a89aaf7b03571e5",
+   "manifest_sha256": "31bb10537de5f6442412f250f93a620857f02cb0a79297e94a89aaf7b03571e5",
+   "vendor_sha256": "31bb10537de5f6442412f250f93a620857f02cb0a79297e94a89aaf7b03571e5",
+   "role": "CDD header",
+   "license": "cddlib GPL"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/cddtypes.h",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/cddtypes.h",
+   "origin_sha256": "d9d7f8aac7ec1d39c6cb22a4a3e89680f1f491bc53074391d1532b43ffcf10a1",
+   "manifest_sha256": "d9d7f8aac7ec1d39c6cb22a4a3e89680f1f491bc53074391d1532b43ffcf10a1",
+   "vendor_sha256": "d9d7f8aac7ec1d39c6cb22a4a3e89680f1f491bc53074391d1532b43ffcf10a1",
+   "role": "CDD header",
+   "license": "cddlib GPL"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/setoper.h",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/setoper.h",
+   "origin_sha256": "7ab8cb8d41dc8e9d0e6554d36989b04d029bac34ffe069d2743e87866cd3f44f",
+   "manifest_sha256": "7ab8cb8d41dc8e9d0e6554d36989b04d029bac34ffe069d2743e87866cd3f44f",
+   "vendor_sha256": "7ab8cb8d41dc8e9d0e6554d36989b04d029bac34ffe069d2743e87866cd3f44f",
+   "role": "CDD header",
+   "license": "cddlib GPL"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/lib-src/splitmix64.h",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/lib-src/splitmix64.h",
+   "origin_sha256": "8890e0f6d9ceb5ba1e6d596845625ea4960ebe1bbe97639a2e866b68a35a3e9e",
+   "manifest_sha256": "8890e0f6d9ceb5ba1e6d596845625ea4960ebe1bbe97639a2e866b68a35a3e9e",
+   "vendor_sha256": "8890e0f6d9ceb5ba1e6d596845625ea4960ebe1bbe97639a2e866b68a35a3e9e",
+   "role": "CDD header",
+   "license": "cddlib GPL"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/COPYING",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/COPYING",
+   "origin_sha256": "91df39d1816bfb17a4dda2d3d2c83b1f6f2d38d53e53e41e8f97ad5ac46a0cad",
+   "manifest_sha256": "91df39d1816bfb17a4dda2d3d2c83b1f6f2d38d53e53e41e8f97ad5ac46a0cad",
+   "vendor_sha256": "91df39d1816bfb17a4dda2d3d2c83b1f6f2d38d53e53e41e8f97ad5ac46a0cad",
+   "role": "cddlib license/notice",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/README.md",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/README.md",
+   "origin_sha256": "80ed3bb6d2fbb5b91456a259116540b5775240af60912c7873a41d67686a63e6",
+   "manifest_sha256": "80ed3bb6d2fbb5b91456a259116540b5775240af60912c7873a41d67686a63e6",
+   "vendor_sha256": "80ed3bb6d2fbb5b91456a259116540b5775240af60912c7873a41d67686a63e6",
+   "role": "cddlib license/notice",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/cddlib/AUTHORS",
+   "origin_path": "rust/target/native-source-acquired-20261014/cddlib/cddlib-86dfe60811ec879a46e73d488719acaa754536e4/AUTHORS",
+   "origin_sha256": "50786b0c79596bdaf2e40fa482c64010e1eedead41fe46befbeaa5f1c86277dc",
+   "manifest_sha256": "50786b0c79596bdaf2e40fa482c64010e1eedead41fe46befbeaa5f1c86277dc",
+   "vendor_sha256": "50786b0c79596bdaf2e40fa482c64010e1eedead41fe46befbeaa5f1c86277dc",
+   "role": "cddlib license/notice",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/mini-gmp/mini-gmp.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/mini-gmp/mini-gmp.c",
+   "origin_sha256": "378a9731eb6fd69b93fa074172f79be4089c813365613e414f4da4923dcbda52",
+   "manifest_sha256": "378a9731eb6fd69b93fa074172f79be4089c813365613e414f4da4923dcbda52",
+   "vendor_sha256": "378a9731eb6fd69b93fa074172f79be4089c813365613e414f4da4923dcbda52",
+   "role": "mini-gmp unit/header",
+   "license": "GNU MP: LGPLv3+ or GPLv2+ (dual, per file header)"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/mini-gmp/mini-gmp.h",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/mini-gmp/mini-gmp.h",
+   "origin_sha256": "54ec9383fdf6103a0e22bde2663ca8eb420338015839b663e0eccee103afae99",
+   "manifest_sha256": "54ec9383fdf6103a0e22bde2663ca8eb420338015839b663e0eccee103afae99",
+   "vendor_sha256": "54ec9383fdf6103a0e22bde2663ca8eb420338015839b663e0eccee103afae99",
+   "role": "mini-gmp unit/header",
+   "license": "GNU MP: LGPLv3+ or GPLv2+ (dual, per file header)"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/mini-gmp/mini-mpq.c",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/mini-gmp/mini-mpq.c",
+   "origin_sha256": "41faf6f195a30a7aa28ead1a3d9c2fceac5544436edfb66d860b1d6933043c57",
+   "manifest_sha256": "41faf6f195a30a7aa28ead1a3d9c2fceac5544436edfb66d860b1d6933043c57",
+   "vendor_sha256": "41faf6f195a30a7aa28ead1a3d9c2fceac5544436edfb66d860b1d6933043c57",
+   "role": "mini-gmp unit/header",
+   "license": "GNU MP: LGPLv3+ or GPLv2+ (dual, per file header)"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/mini-gmp/mini-mpq.h",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/mini-gmp/mini-mpq.h",
+   "origin_sha256": "47cfadddb8e1c24c1ab03a4f3bc5931be7833802dee35fc11e978015193609e8",
+   "manifest_sha256": "47cfadddb8e1c24c1ab03a4f3bc5931be7833802dee35fc11e978015193609e8",
+   "vendor_sha256": "47cfadddb8e1c24c1ab03a4f3bc5931be7833802dee35fc11e978015193609e8",
+   "role": "mini-gmp unit/header",
+   "license": "GNU MP: LGPLv3+ or GPLv2+ (dual, per file header)"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/mini-gmp/README",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/mini-gmp/README",
+   "origin_sha256": "ea2f6c327b3c567d40deacedda546e8daca5ebd651d61a2ed6e9eb8318fe7f37",
+   "manifest_sha256": "ea2f6c327b3c567d40deacedda546e8daca5ebd651d61a2ed6e9eb8318fe7f37",
+   "vendor_sha256": "ea2f6c327b3c567d40deacedda546e8daca5ebd651d61a2ed6e9eb8318fe7f37",
+   "role": "mini-gmp README (license + usage notice)",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/COPYING",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/COPYING",
+   "origin_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+   "manifest_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+   "vendor_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+   "role": "GMP license/notice texts",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/COPYING.LESSERv3",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/COPYING.LESSERv3",
+   "origin_sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+   "manifest_sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+   "vendor_sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+   "role": "GMP license/notice texts",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/COPYINGv2",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/COPYINGv2",
+   "origin_sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+   "manifest_sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+   "vendor_sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+   "role": "GMP license/notice texts",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/COPYINGv3",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/COPYINGv3",
+   "origin_sha256": "e6037104443f9a7829b2aa7c5370d0789a7bda3ca65a0b904cdc0c2e285d9195",
+   "manifest_sha256": "e6037104443f9a7829b2aa7c5370d0789a7bda3ca65a0b904cdc0c2e285d9195",
+   "vendor_sha256": "e6037104443f9a7829b2aa7c5370d0789a7bda3ca65a0b904cdc0c2e285d9195",
+   "role": "GMP license/notice texts",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/README",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/README",
+   "origin_sha256": "5e9f9325fd702bc4bcda27d7a78fea88a2a09fa39b4b15ac7b9b205e0863dc7e",
+   "manifest_sha256": "5e9f9325fd702bc4bcda27d7a78fea88a2a09fa39b4b15ac7b9b205e0863dc7e",
+   "vendor_sha256": "5e9f9325fd702bc4bcda27d7a78fea88a2a09fa39b4b15ac7b9b205e0863dc7e",
+   "role": "GMP license/notice texts",
+   "license": "-"
+  },
+  {
+   "vendor_path": "submission/vendor/gmp/AUTHORS",
+   "origin_path": "rust/target/native-source-acquired-20261014/gmp/gmp-6.3.0/AUTHORS",
+   "origin_sha256": "da5870e2f0482c5dc15b4cfed8bbfb51ce1279c8f8fc52bdb8c13c7cee949c32",
+   "manifest_sha256": "da5870e2f0482c5dc15b4cfed8bbfb51ce1279c8f8fc52bdb8c13c7cee949c32",
+   "vendor_sha256": "da5870e2f0482c5dc15b4cfed8bbfb51ce1279c8f8fc52bdb8c13c7cee949c32",
+   "role": "GMP license/notice texts",
+   "license": "-"
+  }
+ ],
+ "generated": {
+  "submission/vendor/cddlib/generated/cdd_f.h": "5a4d863f5124bce45b3b7fe711e2d70ae6ed7b8b180a0fea6b8393677762264f",
+  "submission/vendor/cddlib/generated/cddcore_f.c": "7e28e77681fc477fd42e4fc96b0853e95f3518dcbb2e73f89925e24ad838ec88",
+  "submission/vendor/cddlib/generated/cddio_f.c": "fcc9bbd3d1c1de021522e9fc3be9a1afb30c2d59041c0f66f51408ad69d92529",
+  "submission/vendor/cddlib/generated/cddlib_f.c": "1309048aa31eef7b105da7c075c58312d98dfc95fba847e30e6bed22f3c33fec",
+  "submission/vendor/cddlib/generated/cddlp_f.c": "c06117435b00c303a4170dd99abe20df43fb8c44f9081fb1b9d181dc666c9c0f",
+  "submission/vendor/cddlib/generated/cddmp_f.c": "c8e3ab4c846ebd837a175612eb2aebc96371246448c05cce2b52d4d6eb635534",
+  "submission/vendor/cddlib/generated/cddmp_f.h": "d219e50f6604bb9d45d6e4d6674b8cab3a9e1c4ab5a54071ab5af18d6a94fa0c",
+  "submission/vendor/cddlib/generated/cddproj_f.c": "641824d431d864d1b0468f78f018f24f93f5a18de8243ee459f21f597cf6deb8",
+  "submission/vendor/cddlib/generated/cddtypes_f.h": "548ecd57a655bb244146d762832f65a390f580752ede6b8e3df2adedd7023879"
+ },
+ "project_authored": {
+  "submission/vendor/adapter/gmp.h": "191317c89e9ff388b8c0b9f8827a7660e110cd37273acec22aafd11b9a282009"
+ },
+ "current_vendor_patch_chain": {
+  "record_scope": "Historical pristine inputs and generated outputs, before the lean thread-local counter patch. These original hashes are retained as patch inputs, not assertions about the current patched files.",
+  "path": "PATCHES.json",
+  "sha256": "9dbec1661bfb96d76205ced76ebd43506e76328d1eae3c2a42851fac438cb867",
+  "current_hashes": "SHA256SUMS records the current shipped files; PATCHES.json records original and patched hashes for the changed sources."
+ }
+}

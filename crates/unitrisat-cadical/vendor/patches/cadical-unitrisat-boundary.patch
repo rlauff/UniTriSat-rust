@@ -1,0 +1,110 @@
+--- a/src/internal.cpp
++++ b/src/internal.cpp
+@@ -98,7 +98,7 @@
+ // by static analyzers though.  Clang with '--analyze' thought that this
+ // idiom would generate a memory leak thus we use the following dummy.
+ 
+-static signed char *ignore_clang_analyze_memory_leak_warning;
++static thread_local signed char *ignore_clang_analyze_memory_leak_warning;
+ 
+ void Internal::enlarge_vals (size_t new_vsize) {
+   signed char *new_vals;
+--- a/src/compact.cpp
++++ b/src/compact.cpp
+@@ -157,7 +157,7 @@
+ 
+ /*------------------------------------------------------------------------*/
+ 
+-static signed char *ignore_clang_analyze_memory_leak_warning;
++static thread_local signed char *ignore_clang_analyze_memory_leak_warning;
+ 
+ void Internal::compact () {
+ 
+--- a/src/options.cpp
++++ b/src/options.cpp
+@@ -142,12 +142,14 @@
+   assert (!has ("zzzzz"));
+ #endif
+ 
++#ifndef UNITRISAT_NO_ENVIRONMENT
+   // Now overwrite default options with environment values.
+   //
+ #define OPTION(N, V, L, H, O, P, R, D) \
+   initialize_from_environment (N, #N, L, H);
+   OPTIONS
+ #undef OPTION
++#endif
+ }
+ 
+ /*------------------------------------------------------------------------*/
+--- a/src/solver.cpp
++++ b/src/solver.cpp
+@@ -361,7 +361,9 @@
+ // garbage. See also the comment on
+ // `tracing_api_calls_through_environment_variable_method` above.
+ //
++#ifndef UNITRISAT_NO_ENVIRONMENT
+ static atomic<bool> tracing_nb_lidrup_env_var_method{false};
++#endif
+ 
+ Solver::Solver () {
+ 
+@@ -400,6 +402,7 @@
+     message ("tracing API calls to '%s'", path);
+ #endif
+ 
++#ifndef UNITRISAT_NO_ENVIRONMENT
+   const char *lidrup_path = getenv ("CADICAL_LIDRUP_TRACE");
+   if (!lidrup_path)
+     lidrup_path = getenv ("CADICALLIDRUPTRACE");
+@@ -417,6 +420,7 @@
+   } else {
+     tracing_nb_lidrup_env_var_method = false;
+   }
++#endif
+ 
+   delete_internal.release ();
+   delete_external.release ();
+@@ -428,7 +432,9 @@
+   REQUIRE_VALID_OR_SOLVING_STATE ();
+   STATE (DELETING);
+ 
++#ifndef UNITRISAT_NO_ENVIRONMENT
+   tracing_nb_lidrup_env_var_method = false;
++#endif
+ 
+ #ifdef LOGGING
+   //
+@@ -774,8 +780,10 @@
+   REQUIRE_VALID_STATE ();
+   transition_to_steady_state ();
+   const int res = external->propagate_assumptions ();
++#ifndef UNITRISAT_NO_ENVIRONMENT
+   if (tracing_nb_lidrup_env_var_method)
+     flush_proof_trace (true);
++#endif
+   LOG_API_CALL_RETURNS ("propagate_assumptions", res);
+   if (res == 10)
+     STATE (SATISFIED);
+@@ -794,8 +802,10 @@
+       "can only get implied literals only in unknown or satisfied state");
+   external->conclude_unknown ();
+   external->implied (entrailed);
++#ifndef UNITRISAT_NO_ENVIRONMENT
+   if (tracing_nb_lidrup_env_var_method)
+     flush_proof_trace (true);
++#endif
+   LOG_API_CALL_RETURNS ("implied", (int) entrailed.size ());
+ }
+ 
+@@ -851,8 +861,10 @@
+   REQUIRE_READY_STATE ();
+   const int res = call_external_solve_and_check_results (false);
+   LOG_API_CALL_RETURNS ("solve", res);
++#ifndef UNITRISAT_NO_ENVIRONMENT
+   if (tracing_nb_lidrup_env_var_method)
+     flush_proof_trace (true);
++#endif
+   return res;
+ }
+ 

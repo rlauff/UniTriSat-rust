@@ -1,0 +1,11 @@
+dimension	3
+restriction	unimodular
+points	10
+simplices	76
+internal_faces	46
+intersecting_pairs	1566
+face_clauses	184
+triangulations	192
+regular_triangulations	192
+flag_triangulations	not_requested
+quadratic_triangulations	not_requested

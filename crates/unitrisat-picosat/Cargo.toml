@@ -1,0 +1,18 @@
+[package]
+name = "unitrisat-picosat"
+description = "Safe FFI over the vendored PicoSAT 965"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+links = "unitrisat_picosat"
+
+[lints]
+workspace = true
+
+[dependencies]
+thiserror = "=2.0.21"
+
+[build-dependencies]
+cc = { version = "=1.2.65", default-features = false }

@@ -1,0 +1,23 @@
+[package]
+name = "unitrisat"
+description = "Reusable exact triangulation search with optional GPU acceleration"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[features]
+default = []
+cli = ["dep:clap"]
+cuda = ["unitrisat-gpu/cuda"]
+
+[dependencies]
+rayon = "=1.12.0"
+unitrisat-core = { path = "../unitrisat-core" }
+unitrisat-gpu = { path = "../unitrisat-gpu" }
+thiserror = "=2.0.21"
+clap = { version = "=4.6.1", features = ["derive"], optional = true }

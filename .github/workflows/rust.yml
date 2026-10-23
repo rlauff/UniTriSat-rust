@@ -1,0 +1,101 @@
+name: Rust
+
+# Linux validation; see docs/DEVELOPMENT.md for local commands.
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  check:
+    name: fmt, clippy, tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.0
+        with:
+          components: clippy, rustfmt
+      - name: Install native build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libclang-dev
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: .
+      - name: Formatting
+        run: cargo fmt --all -- --check
+      - name: Clippy (full lint policy)
+        run: cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+      - name: Tests (debug)
+        run: cargo test --workspace --all-features --locked
+      - name: Tests (release)
+        run: cargo test --workspace --all-features --release --locked
+      - name: Docs
+        run: cargo doc --workspace --no-deps --locked
+        env:
+          RUSTDOCFLAGS: -D warnings
+
+  dependencies:
+    name: cargo-deny, cargo-machete
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.0
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-deny,cargo-machete
+      - name: Licenses, advisories, bans, sources
+        run: cargo deny --all-features check
+      - name: Unused dependencies
+        run: cargo machete
+
+  python-renderer:
+    name: plotting helper tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 -m unittest discover -s bindings/julia/python -p test_render.py
+
+  julia-interface:
+    name: Julia interface and CPU bridge
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.0
+      - name: Install native build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libclang-dev
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: .
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: "1.10"
+      - name: Build CPU bridge
+        run: cargo build --release --locked -p unitrisat-cli --bin unitrisat-julia
+      - name: Julia tests with actual Rust calls
+        run: julia --project=bindings/julia -e 'using Pkg; Pkg.instantiate(); Pkg.test()'
+        env:
+          JULIA_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          UNITRISAT_ADAPTER_INTEGRATION: "1"

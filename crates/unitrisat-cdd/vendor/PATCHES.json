@@ -1,0 +1,34 @@
+{
+ "schema": "unitrisat-cdd patches v1",
+ "task": "P1.9 (docs/lean-migration, REVIEW.md R3)",
+ "patches": [
+  {
+   "path": "patches/0001-thread-local-pivot-counters.patch",
+   "sha256": "4ea5bca7f12ff29129629b8300fe9e46dd4d62b434fcfb2035f2195f3e3bb1f3",
+   "purpose": "Make the six LP pivot statistic counters (dd_statBApivots, dd_statCCpivots, dd_statDS1pivots, dd_statDS2pivots, dd_statACpivots, dd_statBSpivots) and their generated ddf_ twins _Thread_local. cddlp.c adds to them at the end of every LP (lines 1068, 1372, 1552-1553, 1665, 3677; cddlp_f.c likewise), which is a C11 data race when two threads solve LPs at once. They are only read by cddlib's report writers, which this crate never calls, so results are unchanged. Every other process-wide object is written only by dd_set_global_constants, which the crate runs once (std::sync::Once) before any other call; upstream 0.94n already declares all function-local scratch buffers and the splitmix64 state _Thread_local.",
+   "apply": "cd vendor && patch -p1 --fuzz=0 < patches/0001-thread-local-pivot-counters.patch (applies to the pristine files listed in PROVENANCE.json and GENERATION_RECEIPT.json)",
+   "recover_original": "cd vendor && patch -R -p1 --fuzz=0 < patches/0001-thread-local-pivot-counters.patch; the four files then hash to original_sha256 below (checked 2026-10-15)",
+   "generated_units": "generated/cdd_f.h and generated/cddlib_f.c were regenerated from the patched lib-src with python3 -I -B generate_float_sources.py lib-src OUT; the other seven generated files came out byte-identical to GENERATION_RECEIPT.json",
+   "c_only": "_Thread_local is C11; cdd.h is no longer valid C++ (its extern \"C\" block), which does not matter because only C units include it",
+   "files": {
+    "cddlib/lib-src/cdd.h": {
+     "original_sha256": "2b041f131be8608fcd15b8c6d676482c1df156a733ef379a9b3516cc0562cb28",
+     "patched_sha256": "ebfac9132d6f6403cdd0aa484a60864d41c209c385fe9bb494a5e1b05b57d36f"
+    },
+    "cddlib/lib-src/cddlib.c": {
+     "original_sha256": "893d6b653b2bef017fdb158d260a058123d6b22f19584a19ba42b3ce499d3e55",
+     "patched_sha256": "600612183ecfdfb00658ad1aaec1a4c95108c05ac090fe51b002f865e2786ad6"
+    },
+    "cddlib/generated/cdd_f.h": {
+     "original_sha256": "5a4d863f5124bce45b3b7fe711e2d70ae6ed7b8b180a0fea6b8393677762264f",
+     "patched_sha256": "0ace1e63af8c1f36e0131f4963bd14a3baa3c80fd1b5296c6b489ddc79bf2d1a"
+    },
+    "cddlib/generated/cddlib_f.c": {
+     "original_sha256": "1309048aa31eef7b105da7c075c58312d98dfc95fba847e30e6bed22f3c33fec",
+     "patched_sha256": "7e9ee3cf7433f0ee1b2f0397304dea6b164271131bd686cf388c6114751812d7"
+    }
+   },
+   "verification": "tsan/run.sh (2026-10-15): ThreadSanitizer on 8 threads computing hulls and solving LPs concurrently through shim/ucdd.c after one ucdd_init: pristine sources report 10 data races, all on the pivot counter updates (cddlp_f.c:1069, 1373, 1553, 1554; cddlp.c:3677); patched sources report none; both give correct results. tests/concurrency.rs runs 16 threads x 200 rounds through the Rust API without a lock and compares every result with a sequential run."
+  }
+ ]
+}

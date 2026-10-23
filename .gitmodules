@@ -1,0 +1,3 @@
+[submodule "Polytopes/small-lattice-polytopes"]
+	path = Polytopes/small-lattice-polytopes
+	url = https://github.com/gabrieleballetti/small-lattice-polytopes.git

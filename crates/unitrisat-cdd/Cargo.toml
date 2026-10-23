@@ -1,0 +1,22 @@
+[package]
+name = "unitrisat-cdd"
+description = "Safe FFI over the vendored cddlib 0.94n with exact GMP rationals"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+links = "unitrisat_cdd"
+
+[lints]
+workspace = true
+
+[dependencies]
+# GMP built from bundled source (no system dependency), shared with cddlib
+# and rug (D5).
+gmp-mpfr-sys = { workspace = true }
+rug = { workspace = true, features = ["rational"] }
+thiserror = "=2.0.21"
+
+[build-dependencies]
+cc = { version = "=1.2.65", default-features = false }

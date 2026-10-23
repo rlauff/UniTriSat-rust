@@ -1,0 +1,170 @@
+--- a/src/options.cpp
++++ b/src/options.cpp
+@@ -4,26 +4,12 @@
+ 
+ /*------------------------------------------------------------------------*/
+ 
+-// By default, e.g., for library usage, the 'opts.report' value is zero
+-// ('false') but can be set to '1' by the stand alone solver.  Using here
+-// a static default value avoids that the stand alone solver reports that
+-// '--report=1' is different from the default in 'print ()' below.
+-//
+-int Options::reportdefault;
+-
+-/*------------------------------------------------------------------------*/
+-
+-// The order of initializations of static objects is undefined and thus we
+-// can not assume that this table is already initialized if a solver and
+-// thus the constructor of 'Options' is called.  Therefore we just have to
+-// reinitialize this table in every call to 'Options::Options'.  This does
+-// not produce a data race even for parallel initialization since the
+-// same values are written by all threads under the assumption that the
+-// 'reportdefault' is set before any solver is initialized.  We do have to
+-// perform this static initialization though, since 'has' is static and does
+-// not require that the 'Options' constructor was called.
+-
+-Option Options::table[] = {
++// This library build fixes reportdefault at compile time. All metadata is
++// constant-initialized before any solver can be constructed, including from
++// another translation unit's static initializer. Constructors only write their
++// own option values; identical concurrent writes to metadata would be a race.
++
++const Option Options::table[] = {
+ #define OPTION(N, V, L, H, O, P, R, D) \
+   {#N, (int) V, (int) L, (int) H, (int) O, (bool) P, D},
+     OPTIONS
+@@ -35,11 +21,11 @@
+ // Binary search in 'table', which requires option names to be sorted, which
+ // in turned is checked at start-up in 'Options::Options'.
+ 
+-Option *Options::has (const char *name) {
++const Option *Options::has (const char *name) {
+   size_t l = 0, r = number_of_options;
+   while (l < r) {
+     size_t m = l + (r - l) / 2;
+-    Option *res = &table[m];
++    const Option *res = &table[m];
+     int tmp = strcmp (name, res->name);
+     if (!tmp)
+       return res;
+@@ -120,13 +106,6 @@
+       FATAL ("'%s' ordered before '" #N "' in 'options.hpp'", prev); \
+     N = (int) (V); \
+     assert (&val (i) == &N); \
+-    /* The order of initializing static data is undefined and thus */ \
+-    /* it might be the case that the 'table' is not initialized yet. */ \
+-    /* Thus this construction just reinitializes the table too even */ \
+-    /* though it might not be necessary. */ \
+-    assert (!table[i].name || !strcmp (table[i].name, #N)); \
+-    table[i] = {#N,        (int) (V),  (int) (L), (int) (H), \
+-                (int) (O), (bool) (P), D}; \
+     prev = #N; \
+     i++; \
+   } while (0);
+@@ -154,7 +133,7 @@
+ 
+ /*------------------------------------------------------------------------*/
+ 
+-void Options::set (Option *o, int new_val) {
++void Options::set (const Option *o, int new_val) {
+   assert (o);
+   int &val = o->val (this), old_val = val;
+   if (old_val == new_val) {
+@@ -179,7 +158,7 @@
+ // Explicit option value setting.
+ 
+ bool Options::set (const char *name, int val) {
+-  Option *o = has (name);
++  const Option *o = has (name);
+   if (!o)
+     return false;
+   set (o, val);
+@@ -187,7 +166,7 @@
+ }
+ 
+ int Options::get (const char *name) {
+-  Option *o = has (name);
++  const Option *o = has (name);
+   return o ? o->val (this) : 0;
+ }
+ 
+@@ -315,7 +294,7 @@
+ }
+ 
+ bool Options::is_preprocessing_option (const char *name) {
+-  Option *o = has (name);
++  const Option *o = has (name);
+   return o ? o->preprocessing : false;
+ }
+ 
+--- a/src/options.hpp
++++ b/src/options.hpp
+@@ -319,7 +319,7 @@
+   int optimizable;
+   bool preprocessing;
+   const char *description;
+-  int &val (Options *);
++  int &val (Options *) const;
+ };
+ 
+ /*------------------------------------------------------------------------*/
+@@ -338,10 +338,10 @@
+ 
+   Internal *internal;
+ 
+-  void set (Option *, int val); // Force to [lo,hi] interval.
++  void set (const Option *, int val); // Force to [lo,hi] interval.
+ 
+   friend struct Option;
+-  static Option table[];
++  static const Option table[];
+ 
+   static void initialize_from_environment (int &val, const char *name,
+                                            const int L, const int H);
+@@ -352,15 +352,10 @@
+   void disable_preprocessing ();
+ 
+ public:
+-  // For library usage we disable reporting by default while for the stand
+-  // alone SAT solver we enable it by default.  This default value has to
+-  // be set before the constructor of 'Options' is called (which in turn is
+-  // called from the constructor of 'Solver').  If we would simply overwrite
+-  // its initial value while initializing the stand alone solver,  we will
+-  // get that change of the default value (from 'false' to 'true') shown
+-  // during calls to 'print ()', which is confusing to the user.
+-  //
+-  static int reportdefault;
++  // This vendored build is library-only: the standalone frontends that
++  // change this default are not compiled. A constant keeps the shared option
++  // metadata constant-initialized and immutable across solver instances.
++  static constexpr int reportdefault = 0;
+ 
+   Options (Internal *);
+ 
+@@ -396,7 +391,7 @@
+   // 'Option' or to have even faster access directly by the member function
+   // (the 'N' above, e.g., 'restart').
+   //
+-  static Option *has (const char *name);
++  static const Option *has (const char *name);
+ 
+   bool set (const char *name, int); // Explicit version.
+   int get (const char *name);       // Get current value.
+@@ -422,7 +417,7 @@
+ 
+   // Iterating options.
+ 
+-  typedef Option *iterator;
++  typedef const Option *iterator;
+   typedef const Option *const_iterator;
+ 
+   static iterator begin () { return table; }
+@@ -431,7 +426,7 @@
+   void copy (Options &other) const; // Copy 'this' into 'other'.
+ };
+ 
+-inline int &Option::val (Options *opts) {
++inline int &Option::val (Options *opts) const {
+   assert (Options::table <= this &&
+           this < Options::table + number_of_options);
+   return opts->val (this - Options::table);
